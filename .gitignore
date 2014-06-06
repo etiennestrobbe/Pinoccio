@@ -1,0 +1,12 @@
+./Examples
+./doc
+./asm
+./depend.out
+./dump.bin
+./libsimul.a
+./Makefile
+./simul.dox
+./Simul_Proc_IS.pdf
+./test_simul
+*.o
+./test_simul
