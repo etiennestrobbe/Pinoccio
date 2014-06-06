@@ -1,5 +1,5 @@
-./Examples
-./doc
+./Examples/*
+./doc/*
 ./asm
 ./depend.out
 ./dump.bin
