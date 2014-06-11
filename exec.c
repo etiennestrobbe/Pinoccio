@@ -13,7 +13,7 @@ void check_condition(Machine *pmach,Instruction instr){
 	if(instr.instr_generic._regcond > 6 || instr.instr_generic._regcond < 0) error(ERR_CONDITION,(pmach->_pc)-1);
 }
 
-void check_adresse(Machine *pmach, int adresse){
+void check_adresse_data(Machine *pmach, int adresse){
 	if (adresse < 0 || adresse > (pmach -> _dataend))error(ERR_SEGDATA,(pmach ->_pc-1));
 }
 
@@ -36,9 +36,8 @@ void exec_load(Machine *pmach, Instruction instr){
 	else{
 		int adresse = get_addr(pmach, instr);
 		int reg = instr.instr_generic._regcond;
-		if (adresse<0 || adresse>(pmach->_dataend)){
-			error(ERR_SEGDATA,((pmach->_pc)-1));
-		} else {(pmach->_registers[reg])=(pmach->_data[adresse]);}
+		check_adresse_data(pmach, adresse);
+		(pmach->_registers[reg])=(pmach->_data[adresse]);
 	}
 }
 
@@ -51,9 +50,8 @@ void exec_store(Machine *pmach, Instruction instr){
 	else{
 		int adresse = get_addr(pmach, instr);
 		int reg = instr.instr_generic._regcond;
-		if (adresse<0 || adresse>(pmach->_dataend)){
-			error(ERR_SEGDATA,((pmach->_pc)-1));
-		} else {(pmach -> _data[adresse]) = (pmach -> _registers[reg]);}
+		check_adresse_data(pmach, adresse);
+		(pmach -> _data[adresse]) = (pmach -> _registers[reg]);
 
 	}
 }
@@ -69,8 +67,7 @@ void exec_add(Machine *pmach,Instruction instr){
 	else{
 		int adresse = get_addr(pmach,instr);
 		int reg = instr.instr_generic._regcond;
-		check_adresse(pmach,adresse);
-		
+		check_adresse_data(pmach,adresse);		
 		(pmach->_registers[reg])+=(pmach->_data[adresse]);
 	}
 }
@@ -98,7 +95,7 @@ void exec_sub(Machine *pmach, Instruction instr){
 		int adresse = get_addr(pmach,instr);
 		int reg = instr.instr_generic._regcond;
 		
-		check_adresse(pmach,adresse);
+		check_adresse_data(pmach,adresse);
 		(pmach -> _registers[reg])-=(pmach -> _data[adresse]);
 		
 	}
@@ -122,7 +119,7 @@ void exec_push(Machine *pmach, Instruction instr){
 	if(is_in_immediate_mode(instr))val = instr.instr_immediate._value;
 	else{
 		int addr = get_addr(pmach,instr);
-		check_adresse(pmach,addr);
+		check_adresse_data(pmach,addr);
 		val = pmach->_data[addr];
 	}
 	if(pmach->_sp == 0)error(ERR_SEGSTACK,(pmach->_pc)-1);
@@ -132,7 +129,7 @@ void exec_push(Machine *pmach, Instruction instr){
 void exec_pop(Machine *pmach, Instruction instr){
 	if(is_in_immediate_mode(instr))error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	int adresse = get_addr(pmach,instr);
-	check_adresse(pmach,adresse);
+	check_adresse_data(pmach,adresse);
 	if(pmach->_sp == (pmach->_datasize)-1)error(ERR_SEGSTACK,(pmach->_pc)-1);
 	pmach->_data[adresse] = pmach->_data[++(pmach->_sp)];
 }
