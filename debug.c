@@ -4,6 +4,12 @@
 #include <stdlib.h>
 #define MAX 50
 
+/**
+ * \file debug.c
+ * \brief implementation du mode debug
+ * \author Etienne
+ * \date 10 Juin 2014
+ */
 
 void print_help();
 void print_end();
@@ -60,6 +66,11 @@ void simul_instruction(Machine *pmach){
 	}	
 }
 
+/**
+ * \fn void print help()
+ * \brief Fonction qui affiche les commandes d'options
+ * \author Etienne
+ */
 void print_help(){
 	printf("\
 	Available commands:\n\
@@ -73,6 +84,7 @@ void print_help(){
 	p	print text (program) memory\n\
 	m	print registers and data memory\n");
 }
+
 
 void print_end(Machine *pmach){
 	printf("*** Machine state after execution ***\n");
