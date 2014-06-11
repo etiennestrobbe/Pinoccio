@@ -11,6 +11,5 @@ test_simul
 *.o
 *.bin
 test_simul
-prog.c
 
 /.project
