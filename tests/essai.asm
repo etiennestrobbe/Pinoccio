@@ -1,7 +1,7 @@
 //-----------------
 // Instructions
 //-----------------
-		TEXT 2
+		TEXT 5
 
 		//Programme Principal
 main	EQU *
