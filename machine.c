@@ -36,45 +36,41 @@ void load_program 	( 	Machine *  	pmach,
 		for (i = 0; i < NREGISTERS-1; i++){
 			pmach->_registers[i] = 0;
 		}
-	}
+}
 	
 	
 
 void print_cpu 	( 	Machine *  	pmach	){
 	Word *registres = pmach->_registers;
 	
-	printf("\n ETATS DES REGISTRES:");
-
+	printf("\n CPU:\n\n");
+	
+	printf("PC: 0x%08x \n", pmach->_pc);
+	printf("CC: 0x%08x \n \n", pmach->_cc);
+	
 	int i = 0;
 	for (i = 0; i < NREGISTERS; i++){
-		printf("R[%d] = %x",i, registres[i]);
+		if (i == 1%3){
+			printf("R[%d] = 0x%08x \n",i, registres[i]);
+		}
+		else{
+			printf("R[%d] = 0x%08x \t",i, registres[i]);
+		}
 	}
 }
 	
 	
 void print_data 	( 	Machine *  	pmach	){
 	
-	printf("\n ETATS DES DATA:");
+	printf("\n ETATS DES DATA: \n\n");
 	int i;
 	for (i = 0; i < pmach->_dataend; i++){
-		printf("DATA[%d] = %x",i, pmach->_data[i]);
+		printf("DATA[%d] = 0x%04x \n\n",i, pmach->_data[i]);
 	}
 	
 	// Si le premier de la pile est vide, c'est qu'il faut se placer apres sp 
 	printf("\n ETATS DE LA PILE");
 	for (i = pmach->_sp; i < pmach->_datasize; i++){
-		printf("STACK[%d] = %x",i, pmach->_data[i]);
+		printf("STACK[%d] = 0x%04x \n\n",i, pmach->_data[i]);
 	}
 }
-
-
-void print_program 	( 	Machine *  	pmach	){
-	
-	printf("\n LE PROGRAMME A EXCECUTER:");
-	
-	int i;
-	for (i=0; i < pmach->_textsize; i++){
-		//pas fini
-	}
-}
-		
