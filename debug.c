@@ -75,7 +75,7 @@ void print_help(){
 }
 
 void print_end(Machine *pmach){
-	printf("*** Machine state before execution ***\n");
+	printf("*** Machine state after execution ***\n");
 	print_program(pmach);
 	print_data(pmach);
 	print_cpu(pmach);

@@ -1,4 +1,6 @@
 #include "machine.h"
+#include "exec.h"
+#include "debug.h"
 #include <stdio.h>
 
 /**
@@ -84,11 +86,20 @@ void read_program(Machine *mach, const char *programfile){
 void dump_memory(Machine *pmach){
 }
 
-void simul(Machine*pmach, bool debug){
-	for(int i=0;i<pmach->_textsize;i++){
-		(pmach->_pc)++;
-		
-	
+bool do_one_step(Machine *pmach){
+	Instruction instr = (pmach->_text)[(pmach->_pc)++];
+	trace("Executing",pmach,instr,(pmach->_pc));
+	return decode_execute(pmach,instr);
+}
+
+void simul(Machine *pmach, bool debug){
+	bool halt = true;
+	while(halt){
+		if(debug){
+			debug = debug_ask(pmach);
+		}
+		halt = do_one_step(pmach);
+	}
 }
 
 		
