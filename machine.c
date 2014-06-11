@@ -67,6 +67,9 @@ void print_data 	( 	Machine *  	pmach	){
 	}
 }
 
+void instr_en_hexa(Machine *pmach){
+	printf("coucou");
+}
 
 void print_program 	( 	Machine *  	pmach	){
 	
@@ -74,7 +77,11 @@ void print_program 	( 	Machine *  	pmach	){
 	
 	int i;
 	for (i=0; i < pmach->_textsize; i++){
-		//pas fini
+		printf("0x%04d: ",i);
+		instr_en_hexa(pmach);
+		printf("	");
+		print_instruction(pmach -> _text[i]);
+		printf("\n");
 	}
 }
 		
