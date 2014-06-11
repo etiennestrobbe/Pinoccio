@@ -1,5 +1,12 @@
 #include "machine.h"
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+
 
 /**
  * \file machine.h
@@ -74,11 +81,37 @@ void print_program 	( 	Machine *  	pmach	){
 	for (i = 0; i < pmach ->_textsize; i++){
 		printf("0x%04x: 0x%08x		",i,pmach -> _text[i]._raw);		
 		print_instruction(pmach -> _text[i], add);
-		putchar("\n");
+		putchar('\n');
 	}
 }
 
-void read_program(Machine *mach, const char *programfile){
+void read_program(Machine *pmach, const char *programfile){
+	int fichier;
+	unsigned textsize, datasize, dataend;
+	char c[50];	
+		
+	fichier = open(programfile, O_RDONLY); // fichier vaut -1 si open n'arrive pas a ouvrir le fichier.
+	
+	// Les 3 premiers entier non signés
+	read(fichier, &c, sizeof(pmach -> _textsize));
+	read(fichier, &c, sizeof(pmach -> _datasize));
+	read(fichier, &c, sizeof(pmach -> _dataend));
+
+	//Les instructions
+	Instruction *text = malloc(textsize * sizeof(Instruction));
+	for (int i = 0; i < textsize; i++){
+		read(fichier, &text, sizeof(text));
+	}
+	//Les données
+	Word *data = malloc(datasize * sizeof(Word));
+	for (int i = 0; i < datasize; i++){
+		read(fichier, &data, sizeof(data));
+	}
+
+	close(fichier);
+	load_program(pmach, textsize, text, datasize, data, dataend);
+	free(text);
+	free(data);
 }
 
 void dump_memory(Machine *pmach){
