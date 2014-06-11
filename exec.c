@@ -30,11 +30,17 @@ void exec_add(Machine *pmach,Instruction instr){
 			adresse = instr.instr_absolute._address;
 			reg = instr.instr_absolute._regcond;			
 		}
-		if(adresse<0 || adresse>(pmach->_dataend))error(ERR_SEGDATA,(pmach->_pc));//TODO voir si error arrete le programme sinon le faire
+		if(adresse<0 || adresse>(pmach->_dataend))error(ERR_SEGDATA,((pmach->_pc)-1));//TODO voir si error arrete le programme sinon le faire
 		
 		(pmach->_registers[reg])+=(pmach->_data[adresse]);
 	}
-	trace("Executing",pmach,instr,pmach->_pc);	
+}
+
+void exec_branch(Machine *pmach,Instruction instr){
+	if(is_in_immediate_mode(instr)) error(ERR_IMMEDIATE,(pmach->_pc)-1);
+	int adresse = (is_in_indexed_mode(instr))?pmach->_registers[instr.instr_indexed._rindex]+instr.instr_indexed._offset:instr.instr_absolute._address;
+	if(adresse<0 || adresse>pmach->_textsize)error(ERR_SEGTEXT,(pmach->_pc)-1);
+	pmach->_pc = adresse;	
 }
 
 
@@ -55,9 +61,9 @@ bool decode_execute(Machine *pmach, Instruction instr){
 		case LOAD:exec_load();break;
 		case STORE:exec_store();break;*/
 		case ADD:exec_add(pmach,instr);break;
-		/*case SUB:exec_sub();break;
-		case BRANCH:exec_branch();break;
-		case CALL:exec_call();break;
+		/*case SUB:exec_sub();break;*/
+		case BRANCH:exec_branch(pmach,instr);break;
+		/*case CALL:exec_call();break;
 		case RET:exec_ret();break;
 		case PUSH:exec_push();break;
 		case POP:exec_pop();break;
@@ -77,7 +83,7 @@ bool decode_execute(Machine *pmach, Instruction instr){
  * \param addr son adresse
  */
 void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr){
-	printf("TRACE: %s: 0x%4x ",msg,addr);
+	printf("TRACE: %s: 0x%04x ",msg,addr);
 	print_instruction(instr,addr);
 	printf("\n");
 }

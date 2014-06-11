@@ -59,9 +59,9 @@ Instruction text[] = {
     {.instr_absolute =  {POP, 	 false, false, 	0, 	0 	}},  // 2E
     {.instr_absolute =  {POP, 	 false, false, 	0, 	0 	}},  // 2E
     {.instr_absolute =  {RET, 	 false, true, 	0, 	0	}},  // 2F*/
-    {.instr_absolute =  {STORE, 	 true, false, 	0, 	2	}},  // 00
-    {.instr_absolute =  {SUB, 	 true, false, 	0, 	25	}},  // 00
-    {.instr_absolute =  {STORE,	 false, false, 	0, 	1	}},  // 00
+    {.instr_absolute =  {BRANCH, 	 true, false, 	0, 	6	}},  // 00
+    {.instr_absolute =  {NOP, 	 true, false, 	0, 	25	}},  // 00
+    {.instr_absolute =  {NOP,	 false, false, 	0, 	1	}},  // 00
     {.instr_absolute =  {HALT,	 false, false, 	0, 	0	}},  // 00
     
     
