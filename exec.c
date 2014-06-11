@@ -42,9 +42,11 @@ void exec_add(Machine *pmach,Instruction instr){
 
 void exec_branch(Machine *pmach,Instruction instr){
 	if(is_in_immediate_mode(instr)) error(ERR_IMMEDIATE,(pmach->_pc)-1);
-	int adresse = (is_in_indexed_mode(instr))?pmach->_registers[instr.instr_indexed._rindex]+instr.instr_indexed._offset:instr.instr_absolute._address;
-	if(adresse<0 || adresse>pmach->_textsize)error(ERR_SEGTEXT,(pmach->_pc)-1);
-	pmach->_pc = adresse;	
+	if(pmach->_cc == instr.instr_generic._regcond){
+		int adresse = (is_in_indexed_mode(instr))?pmach->_registers[instr.instr_indexed._rindex]+instr.instr_indexed._offset:instr.instr_absolute._address;
+		if(adresse<0 || adresse>pmach->_textsize)error(ERR_SEGTEXT,(pmach->_pc)-1);
+		pmach->_pc = adresse;	
+	}
 }
 
 void exec_sub(Machine *pmach, Instruction instr){
@@ -76,8 +78,12 @@ void exec_sub(Machine *pmach, Instruction instr){
 			(pmach -> _registers[reg])-=(pmach -> _data[adresse]);
 		}
 	}
-	trace("Executing",pmach,instr,pmach ->_pc);
-	}
+}
+
+void exec_call(Machine *pmach,Instruction instr){
+	if(is_in_immediate_mode(instr))error(ERR_IMMEDIATE,(pmach->_pc)-1);
+	
+	
 }
 
 
@@ -100,8 +106,8 @@ bool decode_execute(Machine *pmach, Instruction instr){
 		case ADD:exec_add(pmach,instr);break;
 		case SUB:exec_sub();break;
 		case BRANCH:exec_branch(pmach,instr);break;
-		/*case CALL:exec_call();break;
-		case RET:exec_ret();break;
+		case CALL:exec_call(pmach,instr);break;
+		/*case RET:exec_ret();break;
 		case PUSH:exec_push();break;
 		case POP:exec_pop();break;
 		case HALT:exec_halt();break;*/
