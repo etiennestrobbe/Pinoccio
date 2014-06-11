@@ -13,8 +13,11 @@ void check_condition(Machine *pmach,Instruction instr){
 	if(instr.instr_generic._regcond > 6 || instr.instr_generic._regcond < 0) error(ERR_CONDITION,(pmach->_pc)-1);
 }
 
-void check_adresse(Machine *pmach, int adresse){
+void check_adresse_data(Machine *pmach, int adresse){
 	if (adresse < 0 || adresse > (pmach -> _dataend))error(ERR_SEGDATA,(pmach ->_pc-1));
+}
+void check_adresse_text(Machine *pmach, int adresse){
+	if (adresse < 0 || adresse > (pmach -> _textsize))error(ERR_SEGTEXT,(pmach ->_pc-1));
 }
 
 int get_addr(Machine *pmach,Instruction instr){
@@ -81,7 +84,7 @@ void exec_branch(Machine *pmach,Instruction instr){
 	check_condition(pmach,instr);
 	if(pmach->_cc == instr.instr_generic._regcond){
 		int adresse = get_addr(pmach,instr);
-		if(adresse<0 || adresse>pmach->_textsize)error(ERR_SEGTEXT,(pmach->_pc)-1);
+		check_adresse_text(pmach,adresse);
 		pmach->_pc = adresse;	
 	}
 }
@@ -109,11 +112,14 @@ void exec_call(Machine *pmach,Instruction instr){
 	check_condition(pmach,instr);
 	if(pmach->_cc == instr.instr_generic._regcond){
 		pmach->_data[(pmach->_sp)--] = pmach->_pc;
+		int adresse = get_addr(pmach,instr);
+		check_adresse_text(pmach,adresse);
 		pmach->_pc = get_addr(pmach,instr);
 	}	
 }
 
 void exec_ret(Machine *pmach,Instruction instr){
+	check_adresse_text(pmach,(pmach->_pc)+1);
 	pmach->_pc = pmach->_data[++(pmach->_sp)];
 }
 
