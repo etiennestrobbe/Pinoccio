@@ -82,14 +82,14 @@ void print_data 	( 	Machine *  	pmach	){
 
 }
 
-
 void print_program 	( 	Machine *  	pmach	){
-	
-	printf("\n LE PROGRAMME A EXCECUTER:");
-	
+	printf("\n *** PROGRAM (size: %d) ***\n",pmach -> _textsize);
+	unsigned add = 0;
 	int i;
-	for (i=0; i < pmach->_textsize; i++){
-		//pas fini
+	for (i = 0; i < pmach ->_textsize; i++){
+		printf("0x%04x: 0x%08x		",i,pmach -> _text[i]._raw);		
+		print_instruction(pmach -> _text[i], add);
+		putchar("\n");
 	}
 }
 
@@ -98,12 +98,4 @@ void read_program(Machine *mach, const char *programfile){
 
 void dump_memory(Machine *pmach){
 }
-
-void simul(Machine*pmach, bool debug){
-	//~ for(int i=0;i<pmach->_textsize;i++){
-		//~ (pmach->_pc)++;
-		//~ 
-	//~ 
-}
-
 		
