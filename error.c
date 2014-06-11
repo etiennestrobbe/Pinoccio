@@ -33,13 +33,8 @@ void error(Error err, unsigned addr){
 			default:
 				break;
 			}
-			exit(0);
 	}
-	
-	else{
-		//erreure qui n'existe pas.
-	}
-	
+	exit(0);
 }
 
 void warning(Warning warn, unsigned addr){
