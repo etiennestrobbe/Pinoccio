@@ -21,6 +21,66 @@ void exec_illop(Machine *pmach, Instruction instr){
 	error(ERR_ILLEGAL, (pmach->_pc -1)); // Peut-être inutile
 }
 
+void exec_load(Machine *pmach, Instruction instr){
+	// Mode immediat
+	if (is_in_immediate_mode(instr)){
+		int val = instr.instr_immediate._value;
+		int reg = instr.instr_immediate._regcond;
+		(pmach->_registers[reg])=val;
+	}
+	// Mode addresse
+	else{
+		int adresse, reg;
+		// Mode indexed
+		if (is_in_indexed_mode(instr)){
+			int offset = instr.instr_indexed._offset;
+			int reg_index = instr.instr_indexed._rindex;
+			reg = instr.instr_indexed._regcond;
+			adresse = (pmach -> _registers[reg_index])+offset;
+		}
+		// Mode absolute
+		else{
+			reg = inst.instr_absolute._regcond;
+			addresse = instr.instr_absolute._address;
+		}
+		if(adresse<0 || adresse>(pmach->_dataend)){
+			error(ERR_SEGDATA,((pmach->_pc)-1));
+		}
+		else{
+			(pmach->_registers[reg])=(pmach->_data[adresse]);
+		}
+	}
+}
+
+void exec_store(Machine *pmach, Instruction instr){
+	// Mode Immediat
+	if (is_in_immediate_mode(instr)){
+		error(ERR_IMMEDIATE, ((pmatch -> pc) -1);
+	}
+	// Mode addresse
+	else{
+		int adresse, reg;
+		// Mode indexed
+		if (is_in_indexed_mode(isntr)){
+			int offset = instr.instr_indexed._offset;
+			int reg_index = instr.instr_indexed._rindex;
+			reg = instr.instr_indexed._regcond;
+			adresse = (pmach -> _registers[reg_index])+offset;
+		}
+		// Mode absolute
+		else{
+			reg = instr.instr_absolute._regcond;
+			addresse = instr.instr_absolute._address;
+		}
+		if (adresse<0 || adresse>(pmach->_dataend)){
+			error(ERR_SEGDATA,((pmach->_pc)-1));
+		}
+		else{
+			(pmach -> _data[adress]) = (pmach -> -_registers[reg]);
+		}
+	}
+}
+
 void exec_add(Machine *pmach,Instruction instr){
 	// mode immediat -> traiter le cas signe
 	if(is_in_immediate_mode(instr)){
@@ -32,7 +92,7 @@ void exec_add(Machine *pmach,Instruction instr){
 	else{
 		int adresse = get_addr(pmach,instr);
 		int reg = instr.instr_generic._regcond;
-		if(adresse<0 || adresse>(pmach->_dataend))error(ERR_SEGDATA,((pmach->_pc)-1));//TODO voir si error arrete le programme sinon le faire
+		if(adresse<0 || adresse>(pmach->_dataend))error(ERR_SEGDATA,((pmach->_pc)-1));
 		
 		(pmach->_registers[reg])+=(pmach->_data[adresse]);
 	}
@@ -63,6 +123,7 @@ void exec_sub(Machine *pmach, Instruction instr){
 		
 		if (adresse < 0 || adresse > (pmach -> _dataend))error(ERR_SEGDATA,(pmach ->_pc-1));
 		(pmach -> _registers[reg])-=(pmach -> _data[adresse]);
+		
 	}
 }
 
@@ -74,6 +135,7 @@ void exec_call(Machine *pmach,Instruction instr){
 		pmach->_pc = get_addr(pmach,instr);
 	}	
 }
+
 
 
 //! Décodage et exécution d'une instruction
@@ -90,8 +152,8 @@ bool decode_execute(Machine *pmach, Instruction instr){
 		// TODO : arguments a venir
 		case ILLOP:exec_illop(pmach, instr);break;
 		case NOP: break;
-		/*case LOAD:exec_load();break;
-		case STORE:exec_store();break;*/
+		case LOAD:exec_load(pmach, instr);break;
+		case STORE:exec_store(pmach, instr);break;
 		case ADD:exec_add(pmach,instr);break;
 		case SUB:exec_sub(pmach,instr);break;
 		case BRANCH:exec_branch(pmach,instr);break;
