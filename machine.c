@@ -84,4 +84,18 @@ void print_program 	( 	Machine *  	pmach	){
 		printf("\n");
 	}
 }
+
+void read_program(Machine *mach, const char *programfile){
+}
+
+void dump_memory(Machine *pmach){
+}
+
+void simul(Machine*pmach, bool debug){
+	for(int i=0;i<pmach->_textsize;i++){
+		(pmach->_pc)++;
+		
+	
+}
+
 		
