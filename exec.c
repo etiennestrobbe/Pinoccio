@@ -9,6 +9,10 @@ int is_in_indexed_mode(Instruction instr){
 	return (instr.instr_generic._indexed);
 }
 
+void exec_illop(pmach, instr){
+	error(ERR_ILLEGAL, (pmach -> pc -1)); // Peut-être inutile
+}
+
 void exec_add(Machine *pmach,Instruction instr){
 	// mode immediat -> traiter le cas signe
 	if(is_in_immediate_mode(instr)){
@@ -37,6 +41,39 @@ void exec_add(Machine *pmach,Instruction instr){
 	trace("Executing",pmach,instr,pmach->_pc);	
 }
 
+void exec_sub(Machine *pmach, Instruction instr){
+	// mode immediat
+	if (is_in_immediate_mode(instr)){
+		int val = instr.instr_immediate._value;
+		int reg = instr.instr_immediate._regcond;
+		(pmach->_registers[reg])-=val;		
+	}
+	// mode addresse
+	else{
+		int adresse, reg;
+		// mode indexed		
+		if (is_in_indexed_mode(instr)){
+			int offset = instr.instr_indexed._offset;
+			int reg_index = instr.instr_indexed._rindex;
+			reg = instr.instr_indexed._regcond;
+			adresse = (pmach -> _registers[reg_index])+offset;
+		}
+		// mode immediat
+		else{
+			adresse = instr.instr_immediate._address;
+			reg = instr.instr_immediate._regcond;
+		}
+		if (adresse < 0 || adresse > (pmach -> _dataend)){
+			error(ERR_SEGDATA,(pmach -> pc-1));
+		}
+		else{
+			(pmach -> _registers[reg])-=(pmach -> _data[adresse]);
+		}
+	}
+	trace("Executing",pmach,instr,pmach ->_pc);
+	}
+}
+
 
 //! Décodage et exécution d'une instruction
 /*!
@@ -50,13 +87,13 @@ bool decode_execute(Machine *pmach, Instruction instr){
 	if(cop < 0 || cop > LAST_COP)error(ERR_UNKNOWN,pmach->_pc);
 	switch(cop){
 		// TODO : arguments a venir
-		/*case ILLOP:exec_illop();break;
-		case NOP:exec_nop();break;
-		case LOAD:exec_load();break;
+		case ILLOP:exec_illop(pmach, instr);break;
+		case NOP: break;
+		/*case LOAD:exec_load();break;
 		case STORE:exec_store();break;*/
 		case ADD:exec_add(pmach,instr);break;
-		/*case SUB:exec_sub();break;
-		case BRANCH:exec_branch();break;
+		case SUB:exec_sub(pmach, instr);break;
+		/*case BRANCH:exec_branch();break;
 		case CALL:exec_call();break;
 		case RET:exec_ret();break;
 		case PUSH:exec_push();break;
@@ -77,7 +114,7 @@ bool decode_execute(Machine *pmach, Instruction instr){
  * \param addr son adresse
  */
 void trace(const char *msg, Machine *pmach, Instruction instr, unsigned addr){
-	printf("TRACE: %s: 0x%4x ",msg,addr);
+	printf("TRACE: %s: 0x%04x ",msg,addr);
 	print_instruction(instr,addr);
 	printf("\n");
 }
