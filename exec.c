@@ -136,6 +136,10 @@ void exec_call(Machine *pmach,Instruction instr){
 	}	
 }
 
+void exec_ret(Machine *pmach,Instruction instr){
+	pmach->_pc = pmach->_data[++(pmach->_sp)];
+}
+
 
 
 //! Décodage et exécution d'une instruction
@@ -158,7 +162,8 @@ bool decode_execute(Machine *pmach, Instruction instr){
 		case SUB:exec_sub(pmach,instr);break;
 		case BRANCH:exec_branch(pmach,instr);break;
 		case CALL:exec_call(pmach,instr);break;
-		/*case RET:exec_ret();break;
+		case RET:exec_ret(pmach,instr);break;
+		/*
 		case PUSH:exec_push();break;
 		case POP:exec_pop();break;
 		case HALT:exec_halt();break;*/
