@@ -1,0 +1,94 @@
+\hypertarget{debug_8c}{\section{debug.\-c \-File \-Reference}
+\label{debug_8c}\index{debug.\-c@{debug.\-c}}
+}
+{\ttfamily \#include \char`\"{}debug.\-h\char`\"{}}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debug_8c_a392fb874e547e582e9c66a08a1f23326}{\-M\-A\-X}~50
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8c_a853216ac51aa181669ff4d3de74058a7}{print\-\_\-help} ()
+\item 
+void \hyperlink{debug_8c_a70b4f468abdd60eb3fd8e7a17c44ced7}{print\-\_\-end} ()
+\item 
+void \hyperlink{debug_8c_a43b25a32af317ebd55e5806a0ee9cff7}{simul\-\_\-instruction} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\item 
+bool \hyperlink{debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab}{debug\-\_\-ask} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Dialogue de mise au point interactive pour l'instruction courante. \end{DoxyCompactList}\item 
+void \hyperlink{debug_8c_aaa2c20cd1aff86d65affbafcfa8efdfb}{print\-\_\-end} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{debug_8c_a398527b3e9e358c345c5047b16871957}{debug} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{debug_8c_a392fb874e547e582e9c66a08a1f23326}{\index{debug.\-c@{debug.\-c}!\-M\-A\-X@{\-M\-A\-X}}
+\index{\-M\-A\-X@{\-M\-A\-X}!debug.c@{debug.\-c}}
+\subsubsection[{\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-M\-A\-X}~50}}\label{debug_8c_a392fb874e547e582e9c66a08a1f23326}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab}{\index{debug.\-c@{debug.\-c}!debug\-\_\-ask@{debug\-\_\-ask}}
+\index{debug\-\_\-ask@{debug\-\_\-ask}!debug.c@{debug.\-c}}
+\subsubsection[{debug\-\_\-ask}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf debug\-\_\-ask} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab}
+
+
+\-Dialogue de mise au point interactive pour l'instruction courante. 
+
+\-Cette fonction gère le dialogue pour l'option {\ttfamily -\/d} (debug). \-Dans ce mode, elle est invoquée après l'exécution de chaque instruction. \-Elle affiche le menu de mise au point et on exécute le choix de l'utilisateur. \-Si cette fonction retourne faux, on abandonne le mode de mise au point interactive pour les instructions suivantes et jusqu'à la fin du programme.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em mach} & la machine/programme en cours de simulation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+vrai si l'on doit continuer en mode debug, faux sinon 
+\end{DoxyReturn}
+\hypertarget{debug_8c_a70b4f468abdd60eb3fd8e7a17c44ced7}{\index{debug.\-c@{debug.\-c}!print\-\_\-end@{print\-\_\-end}}
+\index{print\-\_\-end@{print\-\_\-end}!debug.c@{debug.\-c}}
+\subsubsection[{print\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-end} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{debug_8c_a70b4f468abdd60eb3fd8e7a17c44ced7}
+\hypertarget{debug_8c_aaa2c20cd1aff86d65affbafcfa8efdfb}{\index{debug.\-c@{debug.\-c}!print\-\_\-end@{print\-\_\-end}}
+\index{print\-\_\-end@{print\-\_\-end}!debug.c@{debug.\-c}}
+\subsubsection[{print\-\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-end} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{debug_8c_aaa2c20cd1aff86d65affbafcfa8efdfb}
+\hypertarget{debug_8c_a853216ac51aa181669ff4d3de74058a7}{\index{debug.\-c@{debug.\-c}!print\-\_\-help@{print\-\_\-help}}
+\index{print\-\_\-help@{print\-\_\-help}!debug.c@{debug.\-c}}
+\subsubsection[{print\-\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-help} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{debug_8c_a853216ac51aa181669ff4d3de74058a7}
+\hypertarget{debug_8c_a43b25a32af317ebd55e5806a0ee9cff7}{\index{debug.\-c@{debug.\-c}!simul\-\_\-instruction@{simul\-\_\-instruction}}
+\index{simul\-\_\-instruction@{simul\-\_\-instruction}!debug.c@{debug.\-c}}
+\subsubsection[{simul\-\_\-instruction}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf simul\-\_\-instruction} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{debug_8c_a43b25a32af317ebd55e5806a0ee9cff7}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{debug_8c_a398527b3e9e358c345c5047b16871957}{\index{debug.\-c@{debug.\-c}!debug@{debug}}
+\index{debug@{debug}!debug.c@{debug.\-c}}
+\subsubsection[{debug}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf debug} = true}}\label{debug_8c_a398527b3e9e358c345c5047b16871957}

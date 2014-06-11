@@ -1,0 +1,85 @@
+\hypertarget{prog_8c}{\section{prog.\-c \-File \-Reference}
+\label{prog_8c}\index{prog.\-c@{prog.\-c}}
+}
+{\ttfamily \#include \char`\"{}machine.\-h\char`\"{}}\*
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{union_instruction}{\-Instruction} \hyperlink{prog_8c_a53ae7c86b11d9a664628491ba41ca09d}{text} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Second exemple de segment de texte. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog_8c_ab06365569505a01a31c5b0da6227d724}{textsize} = sizeof(\hyperlink{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}{text}) / sizeof(\hyperlink{union_instruction}{\-Instruction})
+\begin{DoxyCompactList}\small\item\em \-Taille utile du programme. \end{DoxyCompactList}\item 
+\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} \hyperlink{prog_8c_a5373e8edb39eef8de190ed6dcdcc7338}{data} \mbox{[}20\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Premier exemple de segment de données initial. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog_8c_ad74734ae58f284f6cc955dfecf50f0d0}{dataend} = 10
+\begin{DoxyCompactList}\small\item\em \-Fin de la zone de données utile. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{datasize} = sizeof(\hyperlink{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}{data}) / sizeof(\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word})
+\begin{DoxyCompactList}\small\item\em \-Taille utile du segment de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{prog_8c_a5373e8edb39eef8de190ed6dcdcc7338}{\index{prog.\-c@{prog.\-c}!data@{data}}
+\index{data@{data}!prog.c@{prog.\-c}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Word} {\bf data}\mbox{[}20\mbox{]}}}\label{prog_8c_a5373e8edb39eef8de190ed6dcdcc7338}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+    0,  
+    0,  
+    20, 
+    5,  
+}
+\end{DoxyCode}
+
+
+\-Premier exemple de segment de données initial. 
+
+\hypertarget{prog_8c_ad74734ae58f284f6cc955dfecf50f0d0}{\index{prog.\-c@{prog.\-c}!dataend@{dataend}}
+\index{dataend@{dataend}!prog.c@{prog.\-c}}
+\subsubsection[{dataend}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf dataend} = 10}}\label{prog_8c_ad74734ae58f284f6cc955dfecf50f0d0}
+
+
+\-Fin de la zone de données utile. 
+
+\hypertarget{prog_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{\index{prog.\-c@{prog.\-c}!datasize@{datasize}}
+\index{datasize@{datasize}!prog.c@{prog.\-c}}
+\subsubsection[{datasize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf datasize} = sizeof({\bf data}) / sizeof({\bf \-Word})}}\label{prog_8c_aaf62fcfcec5bdcaf147f70c32398ab32}
+
+
+\-Taille utile du segment de données. 
+
+\hypertarget{prog_8c_a53ae7c86b11d9a664628491ba41ca09d}{\index{prog.\-c@{prog.\-c}!text@{text}}
+\index{text@{text}!prog.c@{prog.\-c}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Instruction} {\bf text}\mbox{[}$\,$\mbox{]}}}\label{prog_8c_a53ae7c86b11d9a664628491ba41ca09d}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+
+
+    
+    {.instr_absolute =  {STORE,          true, false,   0,      2       }},  
+    {.instr_absolute =  {SUB,    true, false,   0,      25      }},  
+    {.instr_absolute =  {STORE,  false, false,  0,      1       }},  
+    {.instr_absolute =  {HALT,   false, false,  0,      0       }},  
+    
+    
+    
+    
+}
+\end{DoxyCode}
+
+
+\-Second exemple de segment de texte. 
+
+\-Segment de texte.
+
+\begin{DoxyNote}{\-Note}
+\-On voit ici l'intérêt de l'initialisation d'une union avec nommage explicite des champs. 
+\end{DoxyNote}
+\hypertarget{prog_8c_ab06365569505a01a31c5b0da6227d724}{\index{prog.\-c@{prog.\-c}!textsize@{textsize}}
+\index{textsize@{textsize}!prog.c@{prog.\-c}}
+\subsubsection[{textsize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf textsize} = sizeof({\bf text}) / sizeof({\bf \-Instruction})}}\label{prog_8c_ab06365569505a01a31c5b0da6227d724}
+
+
+\-Taille utile du programme. 
+

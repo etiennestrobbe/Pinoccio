@@ -1,0 +1,128 @@
+\hypertarget{error_8h}{\section{error.\-h \-File \-Reference}
+\label{error_8h}\index{error.\-h@{error.\-h}}
+}
+
+
+\-Messages et codes d'erreurs.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{\-Error} \{ \*
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82}{\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R} =  0, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1}{\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N}, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e}{\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L}, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab}{\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N}, 
+\*
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021}{\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E}, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c}{\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T}, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915}{\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A}, 
+\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7}{\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Erreur d'exécution. \end{DoxyCompactList}\item 
+enum \hyperlink{error_8h_af6ea07812363481c623a23ea26fbf8ed}{\-Warning} \{ \hyperlink{error_8h_af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77}{\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Codes d'avertissement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{error_8h_a531bb138b38aef758b45a442aa53938a}{error} (\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{\-Error} err, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Affichage d'une erreur et fin du simulateur. \end{DoxyCompactList}\item 
+void \hyperlink{error_8h_aec2872edfc57849ea2557178dc2b2673}{warning} (\hyperlink{error_8h_af6ea07812363481c623a23ea26fbf8ed}{\-Warning} warn, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Affichage d'un avertissement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Messages et codes d'erreurs. 
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{\index{error.\-h@{error.\-h}!\-Error@{\-Error}}
+\index{\-Error@{\-Error}!error.h@{error.\-h}}
+\subsubsection[{\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Error}}}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}
+
+
+\-Erreur d'exécution. 
+
+\-Ce sont les différentes sortes d'erreur rencontrées lors du décodage ou de l'exécution des instructions. \-Elles sont toutes fatales et provoquent la terminaison du programme (du programme simulé comme du simulateur lui-\/même !). \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R@{\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R@{\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82}{\-E\-R\-R\-\_\-\-N\-O\-E\-R\-R\-O\-R}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ac0bd58270c4d98771b5a52ee7b46ff82}
+}]\-Pas d'erreur. \index{\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N@{\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N@{\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1}{\-E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a5c708decdcbd7d8c9fddd8d9e75828a1}
+}]\hyperlink{union_instruction}{\-Instruction} inconnue. \index{\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L@{\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L@{\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e}{\-E\-R\-R\-\_\-\-I\-L\-L\-E\-G\-A\-L}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5aeb345404de9786d0956657072a6c552e}
+}]\hyperlink{union_instruction}{\-Instruction} illégale. \index{\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N@{\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N@{\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab}{\-E\-R\-R\-\_\-\-C\-O\-N\-D\-I\-T\-I\-O\-N}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af019075ff6d5f0b03e50a7a221c456ab}
+}]\-Condition illégale. \index{\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E@{\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E@{\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021}{\-E\-R\-R\-\_\-\-I\-M\-M\-E\-D\-I\-A\-T\-E}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5ab6b77dff11bf3f9ea5db7ece610af021}
+}]\-Valeur immédiate interdite. \index{\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T@{\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T@{\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c}{\-E\-R\-R\-\_\-\-S\-E\-G\-T\-E\-X\-T}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a054107804ee0194e0795c8030c8dbb6c}
+}]\-Violation de taille du segment de texte. \index{\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A@{\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A@{\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915}{\-E\-R\-R\-\_\-\-S\-E\-G\-D\-A\-T\-A}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5a89c234e9ccacaa205398522f841a0915}
+}]\-Violation de taille du segment de données. \index{\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K@{\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K@{\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K}}\item[{\em 
+\hypertarget{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7}{\-E\-R\-R\-\_\-\-S\-E\-G\-S\-T\-A\-C\-K}\label{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5af9241804ffe147bd31661731289191d7}
+}]\-Violation de taille du segment de pile. \end{description}
+\end{Desc}
+
+\hypertarget{error_8h_af6ea07812363481c623a23ea26fbf8ed}{\index{error.\-h@{error.\-h}!\-Warning@{\-Warning}}
+\index{\-Warning@{\-Warning}!error.h@{error.\-h}}
+\subsubsection[{\-Warning}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Warning}}}\label{error_8h_af6ea07812363481c623a23ea26fbf8ed}
+
+
+\-Codes d'avertissement. 
+
+\-Ce sont de simples messages informatifs qui ne provoquent pas la terminaison du programme. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T@{\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T}!error.\-h@{error.\-h}}\index{error.\-h@{error.\-h}!\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T@{\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T}}\item[{\em 
+\hypertarget{error_8h_af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77}{\-W\-A\-R\-N\-\_\-\-H\-A\-L\-T}\label{error_8h_af6ea07812363481c623a23ea26fbf8eda5a5baa88988dd74ee8359d6e504c6d77}
+}]\-Fin normale du programme (sur \-H\-A\-L\-T) \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{error_8h_a531bb138b38aef758b45a442aa53938a}{\index{error.\-h@{error.\-h}!error@{error}}
+\index{error@{error}!error.h@{error.\-h}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf error} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Error}}]{err, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{error_8h_a531bb138b38aef758b45a442aa53938a}
+
+
+\-Affichage d'une erreur et fin du simulateur. 
+
+\begin{DoxyNote}{\-Note}
+\-Toutes les erreurs étant fatales on ne revient jamais de cette fonction. \-L'attribut {\itshape noreturn\/} est une extension (non standard) de \-G\-N\-U \-C qui indique ce fait.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em err} & code de l'erreur \\
+\hline
+{\em addr} & adresse de l'erreur \\
+\hline
+\end{DoxyParams}
+\hypertarget{error_8h_aec2872edfc57849ea2557178dc2b2673}{\index{error.\-h@{error.\-h}!warning@{warning}}
+\index{warning@{warning}!error.h@{error.\-h}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf warning} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Warning}}]{warn, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{error_8h_aec2872edfc57849ea2557178dc2b2673}
+
+
+\-Affichage d'un avertissement. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em warn} & code de l'avertissement \\
+\hline
+{\em addr} & adresse de l'erreur \\
+\hline
+\end{DoxyParams}

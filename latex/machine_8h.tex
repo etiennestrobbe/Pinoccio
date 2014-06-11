@@ -1,0 +1,262 @@
+\hypertarget{machine_8h}{\section{machine.\-h \-File \-Reference}
+\label{machine_8h}\index{machine.\-h@{machine.\-h}}
+}
+
+
+\-Description de la structure du processeur et de sa mémoire.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include \char`\"{}instruction.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_machine}{\-Machine}
+\begin{DoxyCompactList}\small\item\em \-Structure générale de la machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{machine_8h_a7fc2a43e54def648bc97e9f533a1e42f}{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}~16
+\begin{DoxyCompactList}\small\item\em \-Nombre de resitres généraux. \end{DoxyCompactList}\item 
+\#define \hyperlink{machine_8h_aeed5ab4a0b09c5593a7ac3d93739b0ca}{\-\_\-sp}~\-\_\-registers\mbox{[}\hyperlink{machine_8h_a7fc2a43e54def648bc97e9f533a1e42f}{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S} -\/ 1\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Définition de \-\_\-sp comme synonyme du registre \-R15. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}{\-Condition\-\_\-\-Code} \{ \hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc}{\-C\-C\-\_\-\-U} =  0, 
+\hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f}{\-C\-C\-\_\-\-Z}, 
+\hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c}{\-C\-C\-\_\-\-P}, 
+\hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b}{\-C\-C\-\_\-\-N}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Code condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{machine_8h_a9ac26e6f927cf2956823b4f9588d44df}{load\-\_\-program} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach, unsigned \hyperlink{test__simul_8c_ab06365569505a01a31c5b0da6227d724}{textsize}, \hyperlink{union_instruction}{\-Instruction} \hyperlink{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}{text}\mbox{[}\hyperlink{test__simul_8c_ab06365569505a01a31c5b0da6227d724}{textsize}\mbox{]}, unsigned \hyperlink{test__simul_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{datasize}, \hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} \hyperlink{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}{data}\mbox{[}\hyperlink{test__simul_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{datasize}\mbox{]}, unsigned \hyperlink{test__simul_8c_ad74734ae58f284f6cc955dfecf50f0d0}{dataend})
+\begin{DoxyCompactList}\small\item\em \-Chargement d'un programme. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_ac59b88844961c2479108151e24dd555a}{read\-\_\-program} (\hyperlink{struct_machine}{\-Machine} $\ast$mach, const char $\ast$programfile)
+\begin{DoxyCompactList}\small\item\em \-Lecture d'un programme depuis un fichier binaire. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_aa69650bbdba0125402a22c4451755412}{dump\-\_\-memory} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Affichage du programme et des données. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_aba3ce4987ef379073d9d3f31debf89e7}{print\-\_\-program} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Affichage des instructions du programme. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_a549be6eaf631d871e9357513c748640d}{print\-\_\-data} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Affichage des données du programme. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_a87cfff30238b966cfc3c0c416d7076e9}{print\-\_\-cpu} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Affichage des registres du \-C\-P\-U. \end{DoxyCompactList}\item 
+void \hyperlink{machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b}{simul} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach, bool \hyperlink{debug_8c_a398527b3e9e358c345c5047b16871957}{debug})
+\begin{DoxyCompactList}\small\item\em \-Simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Description de la structure du processeur et de sa mémoire. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{machine_8h_aeed5ab4a0b09c5593a7ac3d93739b0ca}{\index{machine.\-h@{machine.\-h}!\-\_\-sp@{\-\_\-sp}}
+\index{\-\_\-sp@{\-\_\-sp}!machine.h@{machine.\-h}}
+\subsubsection[{\-\_\-sp}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-\_\-sp}~\-\_\-registers\mbox{[}{\bf \-N\-R\-E\-G\-I\-S\-T\-E\-R\-S} -\/ 1\mbox{]}}}\label{machine_8h_aeed5ab4a0b09c5593a7ac3d93739b0ca}
+
+
+\-Définition de \-\_\-sp comme synonyme du registre \-R15. 
+
+\hypertarget{machine_8h_a7fc2a43e54def648bc97e9f533a1e42f}{\index{machine.\-h@{machine.\-h}!\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S@{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}}
+\index{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S@{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}!machine.h@{machine.\-h}}
+\subsubsection[{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}~16}}\label{machine_8h_a7fc2a43e54def648bc97e9f533a1e42f}
+
+
+\-Nombre de resitres généraux. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}{\index{machine.\-h@{machine.\-h}!\-Condition\-\_\-\-Code@{\-Condition\-\_\-\-Code}}
+\index{\-Condition\-\_\-\-Code@{\-Condition\-\_\-\-Code}!machine.h@{machine.\-h}}
+\subsubsection[{\-Condition\-\_\-\-Code}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Condition\-\_\-\-Code}}}\label{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}
+
+
+\-Code condition. 
+
+\-Le code condition donne le signe du résultat de la dernière instruction arithmétique (addition, soustraction) exécutée par le processeur.
+
+\begin{DoxyNote}{\-Note}
+\-Dans un processeur réel, le code condition fait partie du mot d'état du processeur. \-Il contient d'autres indications que le simple signe du résultat \-: par exemple le fait qu'une retenue ait été générée ou bien qu'un dépassement de capacité ({\itshape overflow\/}) se soit produit. 
+\end{DoxyNote}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-C\-\_\-\-U@{\-C\-C\-\_\-\-U}!machine.\-h@{machine.\-h}}\index{machine.\-h@{machine.\-h}!\-C\-C\-\_\-\-U@{\-C\-C\-\_\-\-U}}\item[{\em 
+\hypertarget{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc}{\-C\-C\-\_\-\-U}\label{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a04c3a93ec576a8d75cd95ad495f58cfc}
+}]\-Signe du résultat inconnu. \index{\-C\-C\-\_\-\-Z@{\-C\-C\-\_\-\-Z}!machine.\-h@{machine.\-h}}\index{machine.\-h@{machine.\-h}!\-C\-C\-\_\-\-Z@{\-C\-C\-\_\-\-Z}}\item[{\em 
+\hypertarget{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f}{\-C\-C\-\_\-\-Z}\label{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a956fd0d2f14871f1999334a1a5d6e74f}
+}]\-Résultat nul. \index{\-C\-C\-\_\-\-P@{\-C\-C\-\_\-\-P}!machine.\-h@{machine.\-h}}\index{machine.\-h@{machine.\-h}!\-C\-C\-\_\-\-P@{\-C\-C\-\_\-\-P}}\item[{\em 
+\hypertarget{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c}{\-C\-C\-\_\-\-P}\label{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3af95cd91008581d4a445a565d66206a3c}
+}]\-Résultat positif. \index{\-C\-C\-\_\-\-N@{\-C\-C\-\_\-\-N}!machine.\-h@{machine.\-h}}\index{machine.\-h@{machine.\-h}!\-C\-C\-\_\-\-N@{\-C\-C\-\_\-\-N}}\item[{\em 
+\hypertarget{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b}{\-C\-C\-\_\-\-N}\label{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3a3c6fed66f14c571f360998834734cf3b}
+}]\-Résultat négatif. \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{machine_8h_aa69650bbdba0125402a22c4451755412}{\index{machine.\-h@{machine.\-h}!dump\-\_\-memory@{dump\-\_\-memory}}
+\index{dump\-\_\-memory@{dump\-\_\-memory}!machine.h@{machine.\-h}}
+\subsubsection[{dump\-\_\-memory}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf dump\-\_\-memory} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_aa69650bbdba0125402a22c4451755412}
+
+
+\-Affichage du programme et des données. 
+
+\-On affiche les instruction et les données en format hexadécimal, sous une forme prête à être coupée-\/collée dans le simulateur.
+
+\-Pendant qu'on y est, on produit aussi un dump binaire dans le fichier dump.\-prog. \-Le format de ce fichier est compatible avec l'option -\/b de test\-\_\-simul.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_a9ac26e6f927cf2956823b4f9588d44df}{\index{machine.\-h@{machine.\-h}!load\-\_\-program@{load\-\_\-program}}
+\index{load\-\_\-program@{load\-\_\-program}!machine.h@{machine.\-h}}
+\subsubsection[{load\-\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf load\-\_\-program} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach, }
+\item[{unsigned}]{textsize, }
+\item[{{\bf \-Instruction}}]{text\mbox{[}textsize\mbox{]}, }
+\item[{unsigned}]{datasize, }
+\item[{{\bf \-Word}}]{data\mbox{[}datasize\mbox{]}, }
+\item[{unsigned}]{dataend}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_a9ac26e6f927cf2956823b4f9588d44df}
+
+
+\-Chargement d'un programme. 
+
+\-La machine est réinitialisée et ses segments de texte et de données sont remplacés par ceux fournis en paramètre.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+{\em textsize} & taille utile du segment de texte \\
+\hline
+{\em text} & le contenu du segment de texte \\
+\hline
+{\em datasize} & taille utile du segment de données \\
+\hline
+{\em data} & le contenu initial du segment de texte \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_a87cfff30238b966cfc3c0c416d7076e9}{\index{machine.\-h@{machine.\-h}!print\-\_\-cpu@{print\-\_\-cpu}}
+\index{print\-\_\-cpu@{print\-\_\-cpu}!machine.h@{machine.\-h}}
+\subsubsection[{print\-\_\-cpu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-cpu} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_a87cfff30238b966cfc3c0c416d7076e9}
+
+
+\-Affichage des registres du \-C\-P\-U. 
+
+\-Les registres généraux sont affichées en format hexadécimal et décimal.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_a549be6eaf631d871e9357513c748640d}{\index{machine.\-h@{machine.\-h}!print\-\_\-data@{print\-\_\-data}}
+\index{print\-\_\-data@{print\-\_\-data}!machine.h@{machine.\-h}}
+\subsubsection[{print\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-data} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_a549be6eaf631d871e9357513c748640d}
+
+
+\-Affichage des données du programme. 
+
+\-Les valeurs sont affichées en format hexadécimal et décimal.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_aba3ce4987ef379073d9d3f31debf89e7}{\index{machine.\-h@{machine.\-h}!print\-\_\-program@{print\-\_\-program}}
+\index{print\-\_\-program@{print\-\_\-program}!machine.h@{machine.\-h}}
+\subsubsection[{print\-\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-program} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_aba3ce4987ef379073d9d3f31debf89e7}
+
+
+\-Affichage des instructions du programme. 
+
+\-Les instructions sont affichées sous forme symbolique, précédées de leur adresse. .$\ast$ 
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_ac59b88844961c2479108151e24dd555a}{\index{machine.\-h@{machine.\-h}!read\-\_\-program@{read\-\_\-program}}
+\index{read\-\_\-program@{read\-\_\-program}!machine.h@{machine.\-h}}
+\subsubsection[{read\-\_\-program}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf read\-\_\-program} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{mach, }
+\item[{const char $\ast$}]{programfile}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_ac59b88844961c2479108151e24dd555a}
+
+
+\-Lecture d'un programme depuis un fichier binaire. 
+
+\-Le fichier binaire a le format suivant \-:
+
+
+\begin{DoxyItemize}
+\item 3 entiers non signés, la taille du segment de texte ({\ttfamily textsize}), celle du segment de données ({\ttfamily datasize}) et la première adresse libre de données ({\ttfamily dataend}) ;
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item une suite de {\ttfamily textsize} entiers non signés représentant le contenu du segment de texte (les instructions) ;
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item une suite de {\ttfamily datasize} entiers non signés représentant le contenu initial du segment de données.
+\end{DoxyItemize}
+
+\-Tous les entiers font 32 bits et les adresses de chaque segment commencent à 0. \-La fonction initialise complétement la machine.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine à simuler \\
+\hline
+{\em programfile} & le nom du fichier binaire \\
+\hline
+\end{DoxyParams}
+\hypertarget{machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b}{\index{machine.\-h@{machine.\-h}!simul@{simul}}
+\index{simul@{simul}!machine.h@{machine.\-h}}
+\subsubsection[{simul}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf simul} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach, }
+\item[{bool}]{debug}
+\end{DoxyParamCaption}
+)}}\label{machine_8h_ad0bfa0ce7434b963eea888d7b847ac3b}
+
+
+\-Simulation. 
+
+\-La boucle de simualtion est très simple \-: recherche de l'instruction suivante (pointée par le compteur ordinal {\ttfamily \-\_\-pc}) puis décodage et exécution de l'instruction.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+{\em debug} & mode de mise au point (pas à apas) ? \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,101 @@
+\hypertarget{test__simul_8c}{\section{test\-\_\-simul.\-c \-File \-Reference}
+\label{test__simul_8c}\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}}
+}
+
+
+\-Test du simulateur.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include \char`\"{}machine.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}debug.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em \-Programme de test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{union_instruction}{\-Instruction} \hyperlink{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}{text} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Segment de texte. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{test__simul_8c_ab06365569505a01a31c5b0da6227d724}{textsize}
+\begin{DoxyCompactList}\small\item\em \-Taille utile du programme. \end{DoxyCompactList}\item 
+\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} \hyperlink{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}{data} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Premier exemple de segment de données initial. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{test__simul_8c_ad74734ae58f284f6cc955dfecf50f0d0}{dataend}
+\begin{DoxyCompactList}\small\item\em \-Fin de la zone de données utile. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{test__simul_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{datasize}
+\begin{DoxyCompactList}\small\item\em \-Taille utile du segment de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Test du simulateur. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!main@{main}}
+\index{main@{main}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf main} (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+\-Programme de test. 
+
+\-Options de la ligne de commande \-:
+
+
+\begin{DoxyDescription}
+\item[-\/d]mode pas à pas (mise au point)
+
+
+\item[-\/f]le programme est dans un fichier binaire ; le nom de ce fichier doit être fourni également en paramètre de la ligne de commande ; sans cette option, on exécute un programme de test prédéfini.
+
+
+\end{DoxyDescription}
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!data@{data}}
+\index{data@{data}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Word} {\bf data}\mbox{[}$\,$\mbox{]}}}\label{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}
+
+
+\-Premier exemple de segment de données initial. 
+
+\hypertarget{test__simul_8c_ad74734ae58f284f6cc955dfecf50f0d0}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!dataend@{dataend}}
+\index{dataend@{dataend}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{dataend}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf dataend}}}\label{test__simul_8c_ad74734ae58f284f6cc955dfecf50f0d0}
+
+
+\-Fin de la zone de données utile. 
+
+\hypertarget{test__simul_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!datasize@{datasize}}
+\index{datasize@{datasize}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{datasize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf datasize}}}\label{test__simul_8c_aaf62fcfcec5bdcaf147f70c32398ab32}
+
+
+\-Taille utile du segment de données. 
+
+\hypertarget{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!text@{text}}
+\index{text@{text}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Instruction} {\bf text}\mbox{[}$\,$\mbox{]}}}\label{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}
+
+
+\-Segment de texte. 
+
+\-Segment de texte.
+
+\begin{DoxyNote}{\-Note}
+\-On voit ici l'intérêt de l'initialisation d'une union avec nommage explicite des champs. 
+\end{DoxyNote}
+\hypertarget{test__simul_8c_ab06365569505a01a31c5b0da6227d724}{\index{test\-\_\-simul.\-c@{test\-\_\-simul.\-c}!textsize@{textsize}}
+\index{textsize@{textsize}!test_simul.c@{test\-\_\-simul.\-c}}
+\subsubsection[{textsize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf textsize}}}\label{test__simul_8c_ab06365569505a01a31c5b0da6227d724}
+
+
+\-Taille utile du programme. 
+

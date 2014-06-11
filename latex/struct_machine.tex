@@ -1,0 +1,119 @@
+\hypertarget{struct_machine}{\section{\-Machine \-Struct \-Reference}
+\label{struct_machine}\index{\-Machine@{\-Machine}}
+}
+
+
+\-Structure générale de la machine.  
+
+
+
+
+{\ttfamily \#include $<$machine.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{union_instruction}{\-Instruction} $\ast$ \hyperlink{struct_machine_ac3249102d1999b98e27e51867198e39a}{\-\_\-text}
+\begin{DoxyCompactList}\small\item\em \-Mémoire pour les instructions. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{struct_machine_ac0943af89706f023b8f3c9c75e2c9f16}{\-\_\-textsize}
+\begin{DoxyCompactList}\small\item\em \-Taille utilisée pour les instructions. \end{DoxyCompactList}\item 
+\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} $\ast$ \hyperlink{struct_machine_a4d0ccf4cdbb4b1b968aaa93dae278c47}{\-\_\-data}
+\begin{DoxyCompactList}\small\item\em \-Mémoire de données. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{struct_machine_a45bdca8bd79802ec21021ab3a6ef8e2c}{\-\_\-datasize}
+\begin{DoxyCompactList}\small\item\em \-Taille utilisée pour les données. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{struct_machine_a6672a65c5a3319e5d1dc646d6c4e720f}{\-\_\-dataend}
+\begin{DoxyCompactList}\small\item\em \-Première adresse libre après les données statiques. \end{DoxyCompactList}\item 
+unsigned \hyperlink{struct_machine_aeb680839a66dd8d6eb8e0f5971462b9a}{\-\_\-pc}
+\begin{DoxyCompactList}\small\item\em \-Compteur ordinal. \end{DoxyCompactList}\item 
+\hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}{\-Condition\-\_\-\-Code} \hyperlink{struct_machine_a741225dbae765ec0fa5cd14613334b66}{\-\_\-cc}
+\begin{DoxyCompactList}\small\item\em \-Code condition \-: signe de la dernière opération. \end{DoxyCompactList}\item 
+\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} \hyperlink{struct_machine_a2275469edc6c6cd7ecb8d75ec745d41f}{\-\_\-registers} \mbox{[}\hyperlink{machine_8h_a7fc2a43e54def648bc97e9f533a1e42f}{\-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Registres généraux (accumulateurs) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Structure générale de la machine. 
+
+\-Cette machine simple est composée de mémoire et d'un processeur.
+
+\-Pour simplifier, une adresse machine référence un mot de 32 bits (et non un octet comme dans la plupart des machines actuelles !). \-La mémoire est découpée en deux segments \-: {\bfseries texte} contenant les instructions du programme; {\bfseries données} contenant les données manipulées ou calculées par le programme. \-L'adresse de début de chacun de ces segments est 0 ; ils sont donc adressés indépendemment. \-Le segment de données contient les données statiques dans ses adresses basses et la {\itshape pile d'exécution\/} dans ses adresses hautes. \-Le sommet de la pile d'exécution est à l'adresse contenue dans le registre {\ttfamily \-R15} ({\ttfamily \-S\-P}). \-Chacun de ces segments a une taille maximale. \-En outre on conserve la taille utile de chaque segment.
+
+\-Le processeur comporte
+
+
+\begin{DoxyItemize}
+\item un registre servant de {\bfseries compteur ordinal} ({\itshape program counter\/}) qui contient l'adresse (dans le segment de texte) de la prochaine instruction à exécuter ;
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item un registre contenant le code condition (voir \hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}{\-Condition\-\_\-\-Code}) ;
+\end{DoxyItemize}
+
+
+\begin{DoxyItemize}
+\item un ensemble de 16 {\bfseries registres généraux} servant d'accumulateurs (registres de calcul). \-Tous ces registres sont identiques et supportent les mêmes opérations. \-Cependant, le registre 15 (connu aussi sous le nom {\ttfamily \-\_\-sp}) joue un rôle spécial, celui de pointeur de la pile d'exécution \-: il doit contenir en permanence l'adresse du sommet de pile (premier élément libre de la pile). 
+\end{DoxyItemize}
+
+\subsection{\-Field \-Documentation}
+\hypertarget{struct_machine_a741225dbae765ec0fa5cd14613334b66}{\index{\-Machine@{\-Machine}!\-\_\-cc@{\-\_\-cc}}
+\index{\-\_\-cc@{\-\_\-cc}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-cc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Condition\-\_\-\-Code} {\bf \-\_\-cc}}}\label{struct_machine_a741225dbae765ec0fa5cd14613334b66}
+
+
+\-Code condition \-: signe de la dernière opération. 
+
+\hypertarget{struct_machine_a4d0ccf4cdbb4b1b968aaa93dae278c47}{\index{\-Machine@{\-Machine}!\-\_\-data@{\-\_\-data}}
+\index{\-\_\-data@{\-\_\-data}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Word}$\ast$ {\bf \-\_\-data}}}\label{struct_machine_a4d0ccf4cdbb4b1b968aaa93dae278c47}
+
+
+\-Mémoire de données. 
+
+\hypertarget{struct_machine_a6672a65c5a3319e5d1dc646d6c4e720f}{\index{\-Machine@{\-Machine}!\-\_\-dataend@{\-\_\-dataend}}
+\index{\-\_\-dataend@{\-\_\-dataend}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-dataend}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-\_\-dataend}}}\label{struct_machine_a6672a65c5a3319e5d1dc646d6c4e720f}
+
+
+\-Première adresse libre après les données statiques. 
+
+\hypertarget{struct_machine_a45bdca8bd79802ec21021ab3a6ef8e2c}{\index{\-Machine@{\-Machine}!\-\_\-datasize@{\-\_\-datasize}}
+\index{\-\_\-datasize@{\-\_\-datasize}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-datasize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-\_\-datasize}}}\label{struct_machine_a45bdca8bd79802ec21021ab3a6ef8e2c}
+
+
+\-Taille utilisée pour les données. 
+
+\hypertarget{struct_machine_aeb680839a66dd8d6eb8e0f5971462b9a}{\index{\-Machine@{\-Machine}!\-\_\-pc@{\-\_\-pc}}
+\index{\-\_\-pc@{\-\_\-pc}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-pc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf \-\_\-pc}}}\label{struct_machine_aeb680839a66dd8d6eb8e0f5971462b9a}
+
+
+\-Compteur ordinal. 
+
+\hypertarget{struct_machine_a2275469edc6c6cd7ecb8d75ec745d41f}{\index{\-Machine@{\-Machine}!\-\_\-registers@{\-\_\-registers}}
+\index{\-\_\-registers@{\-\_\-registers}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-registers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Word} {\bf \-\_\-registers}\mbox{[}{\bf \-N\-R\-E\-G\-I\-S\-T\-E\-R\-S}\mbox{]}}}\label{struct_machine_a2275469edc6c6cd7ecb8d75ec745d41f}
+
+
+\-Registres généraux (accumulateurs) 
+
+\hypertarget{struct_machine_ac3249102d1999b98e27e51867198e39a}{\index{\-Machine@{\-Machine}!\-\_\-text@{\-\_\-text}}
+\index{\-\_\-text@{\-\_\-text}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Instruction}$\ast$ {\bf \-\_\-text}}}\label{struct_machine_ac3249102d1999b98e27e51867198e39a}
+
+
+\-Mémoire pour les instructions. 
+
+\hypertarget{struct_machine_ac0943af89706f023b8f3c9c75e2c9f16}{\index{\-Machine@{\-Machine}!\-\_\-textsize@{\-\_\-textsize}}
+\index{\-\_\-textsize@{\-\_\-textsize}!Machine@{\-Machine}}
+\subsubsection[{\-\_\-textsize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf \-\_\-textsize}}}\label{struct_machine_ac0943af89706f023b8f3c9c75e2c9f16}
+
+
+\-Taille utilisée pour les instructions. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{machine_8h}{machine.\-h}\end{DoxyCompactItemize}

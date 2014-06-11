@@ -1,0 +1,196 @@
+\hypertarget{union_instruction}{\section{\-Instruction \-Union \-Reference}
+\label{union_instruction}\index{\-Instruction@{\-Instruction}}
+}
+
+
+\-Structure d'une instruction.  
+
+
+
+
+{\ttfamily \#include $<$instruction.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{union_instruction_ae01e4320e4368174859b68c497135012}{\-\_\-raw}
+\begin{DoxyCompactList}\small\item\em \-Format brut \-: un mot de 32 bits. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{Code\_Op} \hyperlink{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}{\_cop}: 6\\
+\>\>{\em Code opération. }\\
+\>bool \hyperlink{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}{\_immediate}: 1\\
+\>\>{\em Adressage immédiat ? }\\
+\>bool \hyperlink{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}{\_indexed}: 1\\
+\>\>{\em Adressage indirect ? }\\
+\>unsigned \hyperlink{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}{\_regcond}: 4\\
+\>\>{\em Numéro de registre ou condition. }\\
+\>unsigned \hyperlink{union_instruction_a1516ca58cfa2a856fe67d47d67859fba}{\_pad}: 20\\
+\} \hyperlink{union_instruction_a655fbddb807dcc35363d6149dbb26237}{instr\_generic}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em \-Format générique \-: les premiers champs sont communs. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{Code\_Op} \hyperlink{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}{\_cop}: 6\\
+\>\>{\em Code opération. }\\
+\>bool \hyperlink{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}{\_immediate}: 1\\
+\>\>{\em Adressage immédiat ? }\\
+\>bool \hyperlink{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}{\_indexed}: 1\\
+\>\>{\em Adressage indirect ? }\\
+\>unsigned \hyperlink{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}{\_regcond}: 4\\
+\>\>{\em Numéro de registre ou condition. }\\
+\>unsigned \hyperlink{union_instruction_a7d8f71662d751668bc08cbac1c529124}{\_address}: 20\\
+\>\>{\em Adresse absolue. }\\
+\} \hyperlink{union_instruction_aad60aa5074ecb500e3a90bae25b7e27a}{instr\_absolute}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em \-Format d'une instruction à adressage absolue. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{Code\_Op} \hyperlink{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}{\_cop}: 6\\
+\>\>{\em Code opération. }\\
+\>bool \hyperlink{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}{\_immediate}: 1\\
+\>\>{\em Adressage immédiat ? }\\
+\>bool \hyperlink{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}{\_indexed}: 1\\
+\>\>{\em Adressage indirect ? }\\
+\>unsigned \hyperlink{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}{\_regcond}: 4\\
+\>\>{\em Numéro de registre ou condition. }\\
+\>signed int \hyperlink{union_instruction_ab38556b2069bd4af524024e6045fc711}{\_value}: 20\\
+\>\>{\em Valeur immédiate. }\\
+\} \hyperlink{union_instruction_ad71dbb5583d6c21a4e562be0b378ff8a}{instr\_immediate}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em \-Format d'une instruction à valeur immédiate. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{Code\_Op} \hyperlink{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}{\_cop}: 6\\
+\>\>{\em Code opération. }\\
+\>bool \hyperlink{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}{\_immediate}: 1\\
+\>\>{\em Adressage immédiat ? }\\
+\>bool \hyperlink{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}{\_indexed}: 1\\
+\>\>{\em Adressage indirect ? }\\
+\>unsigned \hyperlink{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}{\_regcond}: 4\\
+\>\>{\em Numéro de registre ou condition. }\\
+\>unsigned \hyperlink{union_instruction_a5b83cbbfd9b2a340e978069a3607a680}{\_rindex}: 4\\
+\>\>{\em Numéro du registre d'index. }\\
+\>signed int \hyperlink{union_instruction_af20114f4f10437752340dc9d6a078547}{\_offset}: 16\\
+\>\>{\em Déplacement. }\\
+\} \hyperlink{union_instruction_ab483163ca6ac7161f93c94601563ccad}{instr\_indexed}\\
+
+\end{tabbing}\begin{DoxyCompactList}\small\item\em \-Format d'une instruction à adressage indéxé \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Structure d'une instruction. 
+
+\-Toutes les instrcutions occupent un mot machine de 32 bits. \-Il y a différents formats possibles selon le type de l'instruction et de ses opérandes.
+
+\begin{DoxyNote}{\-Note}
+\-Bien entendu, on aurait pu se contenter de décrire une instruction comme un mot de 32 bits ({\ttfamily uint32\-\_\-t}) et extraire les différents champs à coup de masquage, d'opérations bit à bit ou autres décalages. \-Mais pourquoi ne pas laisser le compilateur faire toutes ces horreurs à notre place ? \-Pour cela nous utilisons une union pour représenter les différents formats et des champs de bits pour représenter les différents constituants de l'instruction.
+
+\-Ceci a un inconvénient (léger) \-: les champs de bits ne s'appliquent qu'à des types de nature entière et pas à des structures ni des unions. \-Ceci nous oblige donc à avoir une union de structures, chaque structure reprenant les champs communs. 
+\end{DoxyNote}
+
+
+\subsection{\-Field \-Documentation}
+\hypertarget{union_instruction_a7d8f71662d751668bc08cbac1c529124}{\index{\-Instruction@{\-Instruction}!\-\_\-address@{\-\_\-address}}
+\index{\-\_\-address@{\-\_\-address}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf \-\_\-address}}}\label{union_instruction_a7d8f71662d751668bc08cbac1c529124}
+
+
+\-Adresse absolue. 
+
+\hypertarget{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}{\index{\-Instruction@{\-Instruction}!\-\_\-cop@{\-\_\-cop}}
+\index{\-\_\-cop@{\-\_\-cop}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-cop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Code\-\_\-\-Op} {\bf \-\_\-cop}}}\label{union_instruction_a2eef4c29da07a7afefa510530aeabe8b}
+
+
+\-Code opération. 
+
+\hypertarget{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}{\index{\-Instruction@{\-Instruction}!\-\_\-immediate@{\-\_\-immediate}}
+\index{\-\_\-immediate@{\-\_\-immediate}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-immediate}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-\_\-immediate}}}\label{union_instruction_ae8f0aed9ccc5cc06e0689f32c409787d}
+
+
+\-Adressage immédiat ? 
+
+\hypertarget{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}{\index{\-Instruction@{\-Instruction}!\-\_\-indexed@{\-\_\-indexed}}
+\index{\-\_\-indexed@{\-\_\-indexed}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-indexed}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf \-\_\-indexed}}}\label{union_instruction_a49ff74dcae74d84b5fce96090bcbcd14}
+
+
+\-Adressage indirect ? 
+
+\hypertarget{union_instruction_af20114f4f10437752340dc9d6a078547}{\index{\-Instruction@{\-Instruction}!\-\_\-offset@{\-\_\-offset}}
+\index{\-\_\-offset@{\-\_\-offset}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-offset}]{\setlength{\rightskip}{0pt plus 5cm}signed int {\bf \-\_\-offset}}}\label{union_instruction_af20114f4f10437752340dc9d6a078547}
+
+
+\-Déplacement. 
+
+\hypertarget{union_instruction_a1516ca58cfa2a856fe67d47d67859fba}{\index{\-Instruction@{\-Instruction}!\-\_\-pad@{\-\_\-pad}}
+\index{\-\_\-pad@{\-\_\-pad}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-pad}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf \-\_\-pad}}}\label{union_instruction_a1516ca58cfa2a856fe67d47d67859fba}
+\hypertarget{union_instruction_ae01e4320e4368174859b68c497135012}{\index{\-Instruction@{\-Instruction}!\-\_\-raw@{\-\_\-raw}}
+\index{\-\_\-raw@{\-\_\-raw}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf \-\_\-raw}}}\label{union_instruction_ae01e4320e4368174859b68c497135012}
+
+
+\-Format brut \-: un mot de 32 bits. 
+
+\hypertarget{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}{\index{\-Instruction@{\-Instruction}!\-\_\-regcond@{\-\_\-regcond}}
+\index{\-\_\-regcond@{\-\_\-regcond}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-regcond}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf \-\_\-regcond}}}\label{union_instruction_aacc0d299ebbd857ec008b3c9e2ae2cd0}
+
+
+\-Numéro de registre ou condition. 
+
+\hypertarget{union_instruction_a5b83cbbfd9b2a340e978069a3607a680}{\index{\-Instruction@{\-Instruction}!\-\_\-rindex@{\-\_\-rindex}}
+\index{\-\_\-rindex@{\-\_\-rindex}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-rindex}]{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf \-\_\-rindex}}}\label{union_instruction_a5b83cbbfd9b2a340e978069a3607a680}
+
+
+\-Numéro du registre d'index. 
+
+\hypertarget{union_instruction_ab38556b2069bd4af524024e6045fc711}{\index{\-Instruction@{\-Instruction}!\-\_\-value@{\-\_\-value}}
+\index{\-\_\-value@{\-\_\-value}!Instruction@{\-Instruction}}
+\subsubsection[{\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}signed int {\bf \-\_\-value}}}\label{union_instruction_ab38556b2069bd4af524024e6045fc711}
+
+
+\-Valeur immédiate. 
+
+\hypertarget{union_instruction_aad60aa5074ecb500e3a90bae25b7e27a}{\index{\-Instruction@{\-Instruction}!instr\-\_\-absolute@{instr\-\_\-absolute}}
+\index{instr\-\_\-absolute@{instr\-\_\-absolute}!Instruction@{\-Instruction}}
+\subsubsection[{instr\-\_\-absolute}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   {\bf instr\-\_\-absolute}}}\label{union_instruction_aad60aa5074ecb500e3a90bae25b7e27a}
+
+
+\-Format d'une instruction à adressage absolue. 
+
+\hypertarget{union_instruction_a655fbddb807dcc35363d6149dbb26237}{\index{\-Instruction@{\-Instruction}!instr\-\_\-generic@{instr\-\_\-generic}}
+\index{instr\-\_\-generic@{instr\-\_\-generic}!Instruction@{\-Instruction}}
+\subsubsection[{instr\-\_\-generic}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   {\bf instr\-\_\-generic}}}\label{union_instruction_a655fbddb807dcc35363d6149dbb26237}
+
+
+\-Format générique \-: les premiers champs sont communs. 
+
+\hypertarget{union_instruction_ad71dbb5583d6c21a4e562be0b378ff8a}{\index{\-Instruction@{\-Instruction}!instr\-\_\-immediate@{instr\-\_\-immediate}}
+\index{instr\-\_\-immediate@{instr\-\_\-immediate}!Instruction@{\-Instruction}}
+\subsubsection[{instr\-\_\-immediate}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   {\bf instr\-\_\-immediate}}}\label{union_instruction_ad71dbb5583d6c21a4e562be0b378ff8a}
+
+
+\-Format d'une instruction à valeur immédiate. 
+
+\hypertarget{union_instruction_ab483163ca6ac7161f93c94601563ccad}{\index{\-Instruction@{\-Instruction}!instr\-\_\-indexed@{instr\-\_\-indexed}}
+\index{instr\-\_\-indexed@{instr\-\_\-indexed}!Instruction@{\-Instruction}}
+\subsubsection[{instr\-\_\-indexed}]{\setlength{\rightskip}{0pt plus 5cm}struct \{ ... \}   {\bf instr\-\_\-indexed}}}\label{union_instruction_ab483163ca6ac7161f93c94601563ccad}
+
+
+\-Format d'une instruction à adressage indéxé 
+
+
+
+\-The documentation for this union was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{instruction_8h}{instruction.\-h}\end{DoxyCompactItemize}

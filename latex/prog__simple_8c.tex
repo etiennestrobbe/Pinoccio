@@ -1,0 +1,88 @@
+\hypertarget{prog__simple_8c}{\section{\-Examples/prog\-\_\-simple.c \-File \-Reference}
+\label{prog__simple_8c}\index{\-Examples/prog\-\_\-simple.\-c@{\-Examples/prog\-\_\-simple.\-c}}
+}
+{\ttfamily \#include \char`\"{}machine.\-h\char`\"{}}\*
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{union_instruction}{\-Instruction} \hyperlink{prog__simple_8c_a53ae7c86b11d9a664628491ba41ca09d}{text} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Premier exemple de segment de texte. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog__simple_8c_ab06365569505a01a31c5b0da6227d724}{textsize} = sizeof(\hyperlink{test__simul_8c_a53ae7c86b11d9a664628491ba41ca09d}{text}) / sizeof(\hyperlink{union_instruction}{\-Instruction})
+\begin{DoxyCompactList}\small\item\em \-Taille utile du programme. \end{DoxyCompactList}\item 
+\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word} \hyperlink{prog__simple_8c_a5373e8edb39eef8de190ed6dcdcc7338}{data} \mbox{[}20\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Premier exemple de segment de données initial. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog__simple_8c_ad74734ae58f284f6cc955dfecf50f0d0}{dataend} = 5
+\begin{DoxyCompactList}\small\item\em \-Fin de la zone de données utiles. \end{DoxyCompactList}\item 
+const unsigned \hyperlink{prog__simple_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{datasize} = sizeof(\hyperlink{test__simul_8c_a0a1a7765b8d407ad9c19649d5a9dd699}{data}) / sizeof(\hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word})
+\begin{DoxyCompactList}\small\item\em \-Taille utile du segment de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{prog__simple_8c_a5373e8edb39eef8de190ed6dcdcc7338}{\index{prog\-\_\-simple.\-c@{prog\-\_\-simple.\-c}!data@{data}}
+\index{data@{data}!prog_simple.c@{prog\-\_\-simple.\-c}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Word} {\bf data}\mbox{[}20\mbox{]}}}\label{prog__simple_8c_a5373e8edb39eef8de190ed6dcdcc7338}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+    10, 
+    5,  
+    20, 
+    0,  
+}
+\end{DoxyCode}
+
+
+\-Premier exemple de segment de données initial. 
+
+\hypertarget{prog__simple_8c_ad74734ae58f284f6cc955dfecf50f0d0}{\index{prog\-\_\-simple.\-c@{prog\-\_\-simple.\-c}!dataend@{dataend}}
+\index{dataend@{dataend}!prog_simple.c@{prog\-\_\-simple.\-c}}
+\subsubsection[{dataend}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf dataend} = 5}}\label{prog__simple_8c_ad74734ae58f284f6cc955dfecf50f0d0}
+
+
+\-Fin de la zone de données utiles. 
+
+\-Fin de la zone de données utile. \hypertarget{prog__simple_8c_aaf62fcfcec5bdcaf147f70c32398ab32}{\index{prog\-\_\-simple.\-c@{prog\-\_\-simple.\-c}!datasize@{datasize}}
+\index{datasize@{datasize}!prog_simple.c@{prog\-\_\-simple.\-c}}
+\subsubsection[{datasize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf datasize} = sizeof({\bf data}) / sizeof({\bf \-Word})}}\label{prog__simple_8c_aaf62fcfcec5bdcaf147f70c32398ab32}
+
+
+\-Taille utile du segment de données. 
+
+\hypertarget{prog__simple_8c_a53ae7c86b11d9a664628491ba41ca09d}{\index{prog\-\_\-simple.\-c@{prog\-\_\-simple.\-c}!text@{text}}
+\index{text@{text}!prog_simple.c@{prog\-\_\-simple.\-c}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Instruction} {\bf text}\mbox{[}$\,$\mbox{]}}}\label{prog__simple_8c_a53ae7c86b11d9a664628491ba41ca09d}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+
+
+    {.instr_absolute =   {LOAD,          false, false,  0,      0       }},  
+    {.instr_absolute =   {LOAD,          false, false,  1,      1       }},  
+    {.instr_immediate = {SUB,    true,  false,  1,      1       }},  
+    {.instr_absolute =  {BRANCH, false, false,  LE,     7       }},  
+    {.instr_indexed =   {ADD,    false, false,  0,      0       }},  
+    {.instr_immediate = {SUB,    true,  false,  1,      1       }},  
+    {.instr_absolute =  {BRANCH, false, false,  NC,     3       }},  
+    {.instr_absolute =  {STORE,  false, false,  0,      2       }},  
+    {.instr_generic =   {HALT,                                  }},  
+    {.instr_generic =   {ILLOP,                                 }},  
+    {.instr_generic =   {ILLOP,                                 }},  
+    {.instr_generic =   {ILLOP,                                 }},  
+}
+\end{DoxyCode}
+
+
+\-Premier exemple de segment de texte. 
+
+\-Segment de texte.
+
+\begin{DoxyNote}{\-Note}
+\-On voit ici l'intérêt de l'initialisation d'une union avec nommage explicite des champs. 
+\end{DoxyNote}
+\hypertarget{prog__simple_8c_ab06365569505a01a31c5b0da6227d724}{\index{prog\-\_\-simple.\-c@{prog\-\_\-simple.\-c}!textsize@{textsize}}
+\index{textsize@{textsize}!prog_simple.c@{prog\-\_\-simple.\-c}}
+\subsubsection[{textsize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned {\bf textsize} = sizeof({\bf text}) / sizeof({\bf \-Instruction})}}\label{prog__simple_8c_ab06365569505a01a31c5b0da6227d724}
+
+
+\-Taille utile du programme. 
+

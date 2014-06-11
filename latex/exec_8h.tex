@@ -1,0 +1,71 @@
+\hypertarget{exec_8h}{\section{exec.\-h \-File \-Reference}
+\label{exec_8h}\index{exec.\-h@{exec.\-h}}
+}
+
+
+\-Exécution d'une instruction.  
+
+
+{\ttfamily \#include \char`\"{}machine.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{exec_8h_a41471ced34d27777447c2609173af7de}{decode\-\_\-execute} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach, \hyperlink{union_instruction}{\-Instruction} instr)
+\begin{DoxyCompactList}\small\item\em \-Décodage et exécution d'une instruction. \end{DoxyCompactList}\item 
+void \hyperlink{exec_8h_aae353f8fd7ccdbebd6c37fc0f75d12d3}{trace} (const char $\ast$msg, \hyperlink{struct_machine}{\-Machine} $\ast$pmach, \hyperlink{union_instruction}{\-Instruction} instr, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Trace de l'exécution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Exécution d'une instruction. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{exec_8h_a41471ced34d27777447c2609173af7de}{\index{exec.\-h@{exec.\-h}!decode\-\_\-execute@{decode\-\_\-execute}}
+\index{decode\-\_\-execute@{decode\-\_\-execute}!exec.h@{exec.\-h}}
+\subsubsection[{decode\-\_\-execute}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf decode\-\_\-execute} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach, }
+\item[{{\bf \-Instruction}}]{instr}
+\end{DoxyParamCaption}
+)}}\label{exec_8h_a41471ced34d27777447c2609173af7de}
+
+
+\-Décodage et exécution d'une instruction. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pmach} & la machine/programme en cours d'exécution \\
+\hline
+{\em instr} & l'instruction à exécuter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+faux après l'exécution de {\ttfamily \-H\-A\-L\-T} ; vrai sinon 
+\end{DoxyReturn}
+\hypertarget{exec_8h_aae353f8fd7ccdbebd6c37fc0f75d12d3}{\index{exec.\-h@{exec.\-h}!trace@{trace}}
+\index{trace@{trace}!exec.h@{exec.\-h}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf trace} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{msg, }
+\item[{{\bf \-Machine} $\ast$}]{pmach, }
+\item[{{\bf \-Instruction}}]{instr, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{exec_8h_aae353f8fd7ccdbebd6c37fc0f75d12d3}
+
+
+\-Trace de l'exécution. 
+
+\-On écrit l'adresse et l'instruction sous forme lisible.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em msg} & le message de trace \\
+\hline
+{\em pmach} & la machine en cours d'exécution \\
+\hline
+{\em instr} & l'instruction à exécuter \\
+\hline
+{\em addr} & son adresse \\
+\hline
+\end{DoxyParams}

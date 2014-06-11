@@ -1,0 +1,83 @@
+\hypertarget{instruction_8c}{\section{instruction.\-c \-File \-Reference}
+\label{instruction_8c}\index{instruction.\-c@{instruction.\-c}}
+}
+{\ttfamily \#include \char`\"{}instruction.\-h\char`\"{}}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{instruction_8c_af635442db57b983f3317cbf77da036a4}{print\-\_\-registre} (\hyperlink{union_instruction}{\-Instruction} i)
+\item 
+void \hyperlink{instruction_8c_af60bd482be33f6422e76e4da4b5b8ee1}{print\-\_\-condition} (\hyperlink{union_instruction}{\-Instruction} i)
+\item 
+void \hyperlink{instruction_8c_ab96f3a4f54ea0f830aebeeeaf4d5aa38}{print\-\_\-operande} (\hyperlink{union_instruction}{\-Instruction} i)
+\item 
+void \hyperlink{instruction_8c_a437080d5e8c504588a47d0dba468492f}{print\-\_\-instruction} (\hyperlink{union_instruction}{\-Instruction} instr, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Impression d'une instruction sous forme lisible (désassemblage) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{instruction_8c_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}{cop\-\_\-names} \mbox{[}$\,$\mbox{]} = \{\char`\"{}\-I\-L\-L\-O\-P\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026}{\-N\-O\-P}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391}{\-L\-O\-A\-D}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480}{\-S\-T\-O\-R\-E}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909}{\-A\-D\-D}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da}{\-S\-U\-B}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e}{\-B\-R\-A\-N\-C\-H}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8}{\-C\-A\-L\-L}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464}{\-R\-E\-T}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493}{\-P\-U\-S\-H}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa}{\-P\-O\-P}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c}{\-H\-A\-L\-T}\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em \-Forme imprimable des codes opérations. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{instruction_8c_a4cf35570c7b75e596c642031544688e0}{condition\-\_\-names} \mbox{[}$\,$\mbox{]} = \{\char`\"{}\-N\-C\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f}{\-E\-Q}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db}{\-N\-E}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892}{\-G\-T}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce}{\-G\-E}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571}{\-L\-T}\char`\"{}, \char`\"{}\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61}{\-L\-E}\char`\"{}\}
+\begin{DoxyCompactList}\small\item\em \-Forme imprimable des conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{instruction_8c_af60bd482be33f6422e76e4da4b5b8ee1}{\index{instruction.\-c@{instruction.\-c}!print\-\_\-condition@{print\-\_\-condition}}
+\index{print\-\_\-condition@{print\-\_\-condition}!instruction.c@{instruction.\-c}}
+\subsubsection[{print\-\_\-condition}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-condition} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Instruction}}]{i}
+\end{DoxyParamCaption}
+)}}\label{instruction_8c_af60bd482be33f6422e76e4da4b5b8ee1}
+\hypertarget{instruction_8c_a437080d5e8c504588a47d0dba468492f}{\index{instruction.\-c@{instruction.\-c}!print\-\_\-instruction@{print\-\_\-instruction}}
+\index{print\-\_\-instruction@{print\-\_\-instruction}!instruction.c@{instruction.\-c}}
+\subsubsection[{print\-\_\-instruction}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-instruction} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Instruction}}]{instr, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{instruction_8c_a437080d5e8c504588a47d0dba468492f}
+
+
+\-Impression d'une instruction sous forme lisible (désassemblage) 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em instr} & l'instruction à imprimer \\
+\hline
+{\em addr} & son adresse \\
+\hline
+\end{DoxyParams}
+\hypertarget{instruction_8c_ab96f3a4f54ea0f830aebeeeaf4d5aa38}{\index{instruction.\-c@{instruction.\-c}!print\-\_\-operande@{print\-\_\-operande}}
+\index{print\-\_\-operande@{print\-\_\-operande}!instruction.c@{instruction.\-c}}
+\subsubsection[{print\-\_\-operande}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-operande} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Instruction}}]{i}
+\end{DoxyParamCaption}
+)}}\label{instruction_8c_ab96f3a4f54ea0f830aebeeeaf4d5aa38}
+\hypertarget{instruction_8c_af635442db57b983f3317cbf77da036a4}{\index{instruction.\-c@{instruction.\-c}!print\-\_\-registre@{print\-\_\-registre}}
+\index{print\-\_\-registre@{print\-\_\-registre}!instruction.c@{instruction.\-c}}
+\subsubsection[{print\-\_\-registre}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-registre} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Instruction}}]{i}
+\end{DoxyParamCaption}
+)}}\label{instruction_8c_af635442db57b983f3317cbf77da036a4}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{instruction_8c_a4cf35570c7b75e596c642031544688e0}{\index{instruction.\-c@{instruction.\-c}!condition\-\_\-names@{condition\-\_\-names}}
+\index{condition\-\_\-names@{condition\-\_\-names}!instruction.c@{instruction.\-c}}
+\subsubsection[{condition\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf condition\-\_\-names}\mbox{[}$\,$\mbox{]} = \{\char`\"{}\-N\-C\char`\"{}, \char`\"{}{\bf \-E\-Q}\char`\"{}, \char`\"{}{\bf \-N\-E}\char`\"{}, \char`\"{}{\bf \-G\-T}\char`\"{}, \char`\"{}{\bf \-G\-E}\char`\"{}, \char`\"{}{\bf \-L\-T}\char`\"{}, \char`\"{}{\bf \-L\-E}\char`\"{}\}}}\label{instruction_8c_a4cf35570c7b75e596c642031544688e0}
+
+
+\-Forme imprimable des conditions. 
+
+\hypertarget{instruction_8c_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}{\index{instruction.\-c@{instruction.\-c}!cop\-\_\-names@{cop\-\_\-names}}
+\index{cop\-\_\-names@{cop\-\_\-names}!instruction.c@{instruction.\-c}}
+\subsubsection[{cop\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf cop\-\_\-names}\mbox{[}$\,$\mbox{]} = \{\char`\"{}\-I\-L\-L\-O\-P\char`\"{}, \char`\"{}{\bf \-N\-O\-P}\char`\"{}, \char`\"{}{\bf \-L\-O\-A\-D}\char`\"{}, \char`\"{}{\bf \-S\-T\-O\-R\-E}\char`\"{}, \char`\"{}{\bf \-A\-D\-D}\char`\"{}, \char`\"{}{\bf \-S\-U\-B}\char`\"{}, \char`\"{}{\bf \-B\-R\-A\-N\-C\-H}\char`\"{}, \char`\"{}{\bf \-C\-A\-L\-L}\char`\"{}, \char`\"{}{\bf \-R\-E\-T}\char`\"{}, \char`\"{}{\bf \-P\-U\-S\-H}\char`\"{}, \char`\"{}{\bf \-P\-O\-P}\char`\"{}, \char`\"{}{\bf \-H\-A\-L\-T}\char`\"{}\}}}\label{instruction_8c_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}
+
+
+\-Forme imprimable des codes opérations. 
+

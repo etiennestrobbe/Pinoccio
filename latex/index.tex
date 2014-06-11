@@ -1,0 +1,114 @@
+\-Cet exercice produit un simulateur pour un processeur hypothétique et extrêmement simplifié. \-Le processeur lui-\/même est décrit dans la structure \hyperlink{struct_machine}{\-Machine} et ses formats d'instructions dans la structure \hyperlink{union_instruction}{\-Instruction}.\hypertarget{index_code}{}\section{\-Organisation des fichiers source et objets}\label{index_code}
+\-Le code est fourni sous forme de fichiers d'entête ({\ttfamily }.h) et d'une bibliothèque binaire ({\bfseries libsimul.\-a}). \-Le seul fichier {\ttfamily }.c fourni ({\ttfamily \hyperlink{test__simul_8c}{test\-\_\-simul.\-c}}) contient la fonction \hyperlink{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()}.
+
+\-Le code original complet est composé de 5 modules. \-Chaque module comporte un fichier {\ttfamily }.h et un {\ttfamily }.c de même nom. \-Le fichier-\/source {\ttfamily }.c n'est pas fourni mais le fichier-\/objet correspondant figure dans la bibliothèque {\ttfamily libsimul.\-a}.
+
+
+\begin{DoxyDescription}
+\item[\-Module {\ttfamily machine} (\hyperlink{machine_8h}{machine.\-h}, machine.\-c, machine.\-o) ]\-Ce module décrit la structure générale de la machine préchargée avec un programme et des données. \-Ce module décrit et permet d'initialiser les mémoires d'instruction et de données et d'imprimer l'état courant de la machine (instruction, données, registres). 
+
+
+\item[\-Module {\ttfamily instruction} (\hyperlink{instruction_8h}{instruction.\-h}, \hyperlink{instruction_8c}{instruction.\-c}, instruction.\-o) ]\-La structure (le format) des instructions de la machine est décrit dans ce module qui fournit aussi une fonction de \char`\"{}désassemblage\char`\"{} (\hyperlink{instruction_8c_a437080d5e8c504588a47d0dba468492f}{print\-\_\-instruction()}) c'est-\/à-\/dire d'impression d'une instruction sous une forme humainement sympathique. 
+
+
+\item[\-Module {\ttfamily exec} (\hyperlink{exec_8h}{exec.\-h}, \hyperlink{exec_8c}{exec.\-c}, exec.\-o) ]\-On trouve dans ce module le code permettant le décodage et l'exécution des instructions. 
+
+
+\item[\-Module {\ttfamily error} (\hyperlink{error_8h}{error.\-h}, \hyperlink{error_8c}{error.\-c}, error.\-o) ]\-C'est le module d'affichage (en clair) des messages d'erreurs et autre {\itshape warnings\/}. 
+
+
+\item[\-Module {\ttfamily debug} (\hyperlink{debug_8h}{debug.\-h}, \hyperlink{debug_8c}{debug.\-c}, debug.\-o) ]\-Ce module permet l'exécution interactive en pas à pas. \-Sa fonction \hyperlink{debug_8c_a3a88fdc680b7a1ae8c4c7c8ddee730ab}{debug\-\_\-ask()} est invoquée après l'exécution de chaque instruction de la machine et gère un dialogue permettant à l'utilisateur d'afficher l'état de la machine (contenu des mémoires et des registres) ou de passer à l'exécution de l'instruction suivante. 
+
+
+\item[\-Fichier {\ttfamily \hyperlink{test__simul_8c}{test\-\_\-simul.\-c}}  ]\-Ce fichier source contient la fonction \hyperlink{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()} qui
+
+
+\begin{DoxyItemize}
+\item décode les options de ligne de commande (voir plus loin)
+
+
+\item initialise la machine avec le programme et les données initiales
+
+
+\item affiche l'état (mémoires, registres) initial de la machine
+
+
+\item exécute complètement le programme
+
+
+\item affiche l'état (mémoires, registres) final de la machine 
+\end{DoxyItemize}
+
+\-Les options de la ligne de commande sont 
+\begin{DoxyDescription}
+\item[-\/h ]\-Affiche un message d'aide (\char`\"{}help\char`\"{}).
+
+
+\item[-\/d ]\-Lance l'exécution en mode interactif pas à pas (\char`\"{}debug\char`\"{}).
+
+
+\item[-\/b ]\-Le dernier argument de la ligne de commande doit être le nom d'un fichier {\itshape binaire\/} contenant une représentation du programme et de ses données. \-Le format de ce fichier est décrit avec la fonction \hyperlink{machine_8h_ac59b88844961c2479108151e24dd555a}{read\-\_\-program()}. \-On en trouvera des exemples dans le repertoire \-Examples (fichiers {\ttfamily }.bin).
+
+\-Sans option {\bfseries -\/b} la fonction \hyperlink{test__simul_8c_a0ddf1224851353fc92bfbff6f499fa97}{main()} choisit et exécute un programme prédéfini (dans le fichier {\ttfamily prog.\-o} de la bibliothèque {\ttfamily libsimul.\-a}).
+
+
+
+
+
+
+\end{DoxyDescription}
+
+\begin{DoxyAttention}{\-Attention}
+{\itshape \-Le code est écrit en langage \-C et utilise la norme \-C99 (option {\bfseries -\/std=c99} de {\bfseries gcc}). \-Il ne compile pas en mode \-C90 !\/}
+\end{DoxyAttention}
+
+\end{DoxyDescription}\hypertarget{index_make}{}\section{\-Utilisation de la Makefile}\label{index_make}
+
+\begin{DoxyDescription}
+\item[make ]\-Reconstruit l'exécutable de test, {\bfseries test\-\_\-simul}. 
+
+
+\item[make doc ]\-Reconstruit la documentation html dans doc/html. \-Requiert \href{http://www.doxygen.org}{\tt {\bfseries doxygen}. }
+
+
+\item[make clean  ]\-Détruit tous les fichiers objets générés mais pas l'exécutable de test ni la documentation.
+
+
+\item[make clobber  ]\-Détruit tous les fichiers générés y compris l'exécutable de test (mais pas la documentation).
+
+
+\item[make clean\-\_\-doc ]\-Détruit la documentation générée par {\bfseries doxygen}.  
+\end{DoxyDescription}\hypertarget{index_build}{}\section{\-Construction et utilisation du simulateur}\label{index_build}
+\hypertarget{index_build_init}{}\subsection{\-Construction du simulateur initial}\label{index_build_init}
+\-Initialement il suffit de faire sous un {\bfseries shell} quelconque 
+\begin{DoxyCode}
+make
+\end{DoxyCode}
+ puis 
+\begin{DoxyCode}
+test_simul
+\end{DoxyCode}
+ pour exécuter le programme prédéfini. \-Ou alors 
+\begin{DoxyCode}
+test_simul -d -b Examples/prog_subroutine.bin
+\end{DoxyCode}
+ pour exécuter le programme dont le nom est indiqué en mode interactif.\hypertarget{index_build_yours}{}\subsection{\-Intégration de votre propre code}\label{index_build_yours}
+\-Pour intégrer votre propre code, il suffit d'éditer la \-Makefile pour ajouter vos propres fichiers {\ttfamily }.c ; pour cela il vous suffit de définir la variable de {\bfseries make} nommée {\ttfamily \-U\-S\-E\-R\-S\-R\-C} en y mettant la liste de vos propres fichiers {\ttfamily }.c (elle est initialement vide) ; par exemple
+
+
+\begin{DoxyCode}
+USERSRC = machine.c debug.c 
+\end{DoxyCode}
+
+
+puis de faire {\bfseries make} pour reconstruire l'exécutable {\bfseries test\-\_\-simul}. \-Cela compilera vos {\ttfamily }.c et l'éditeur de liens choisira les {\ttfamily }.o correspondants de préférence à ceux qui sont dans la bibliothèque {\ttfamily libsimul.\-a}. \-Si vous ajoutez des {\ttfamily }.h ils seront pris en compte par la regénération des dépendances ({\ttfamily depend.\-out}).
+
+\begin{DoxyAttention}{\-Attention}
+{\itshape {\bfseries \-Ne modifiez pas les fichiers {\ttfamily }.h fournis car les objets de {\ttfamily libsimul.\-a} en dépendent}\/}.
+\end{DoxyAttention}
+\begin{DoxyAuthor}{\-Author}
+\-Jean-\/\-Paul \-Rigault 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+\-Avril 2011 
+\end{DoxyDate}

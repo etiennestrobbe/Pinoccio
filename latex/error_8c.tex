@@ -1,0 +1,56 @@
+\hypertarget{error_8c}{\section{error.\-c \-File \-Reference}
+\label{error_8c}\index{error.\-c@{error.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{error_8c_a531bb138b38aef758b45a442aa53938a}{error} (\hyperlink{error_8h_a2c3e4bb40f36b262a5214e2da2bca9c5}{\-Error} err, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Affichage d'une erreur et fin du simulateur. \end{DoxyCompactList}\item 
+void \hyperlink{error_8c_aec2872edfc57849ea2557178dc2b2673}{warning} (\hyperlink{error_8h_af6ea07812363481c623a23ea26fbf8ed}{\-Warning} warn, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Affichage d'un avertissement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{error_8c_a531bb138b38aef758b45a442aa53938a}{\index{error.\-c@{error.\-c}!error@{error}}
+\index{error@{error}!error.c@{error.\-c}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf error} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Error}}]{err, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{error_8c_a531bb138b38aef758b45a442aa53938a}
+
+
+\-Affichage d'une erreur et fin du simulateur. 
+
+\begin{DoxyNote}{\-Note}
+\-Toutes les erreurs étant fatales on ne revient jamais de cette fonction. \-L'attribut {\itshape noreturn\/} est une extension (non standard) de \-G\-N\-U \-C qui indique ce fait.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em err} & code de l'erreur \\
+\hline
+{\em addr} & adresse de l'erreur \\
+\hline
+\end{DoxyParams}
+\hypertarget{error_8c_aec2872edfc57849ea2557178dc2b2673}{\index{error.\-c@{error.\-c}!warning@{warning}}
+\index{warning@{warning}!error.c@{error.\-c}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf warning} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Warning}}]{warn, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{error_8c_aec2872edfc57849ea2557178dc2b2673}
+
+
+\-Affichage d'un avertissement. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em warn} & code de l'avertissement \\
+\hline
+{\em addr} & adresse de l'erreur \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,200 @@
+\hypertarget{instruction_8h}{\section{instruction.\-h \-File \-Reference}
+\label{instruction_8h}\index{instruction.\-h@{instruction.\-h}}
+}
+
+
+\-Description du jeu d'instruction.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{union_instruction}{\-Instruction}
+\begin{DoxyCompactList}\small\item\em \-Structure d'une instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef union \hyperlink{union_instruction}{\-Instruction} \hyperlink{instruction_8h_ac2c134441907afe0f436508849b98cd2}{\-Instruction}
+\begin{DoxyCompactList}\small\item\em \-Structure d'une instruction. \end{DoxyCompactList}\item 
+typedef uint32\-\_\-t \hyperlink{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\-Word}
+\begin{DoxyCompactList}\small\item\em \-Type d'un mot de donnée. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{\-Code\-\_\-\-Op} \{ \*
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2}{\-I\-L\-L\-O\-P} =  0, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026}{\-N\-O\-P}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391}{\-L\-O\-A\-D}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480}{\-S\-T\-O\-R\-E}, 
+\*
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909}{\-A\-D\-D}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da}{\-S\-U\-B}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e}{\-B\-R\-A\-N\-C\-H}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8}{\-C\-A\-L\-L}, 
+\*
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464}{\-R\-E\-T}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493}{\-P\-U\-S\-H}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa}{\-P\-O\-P}, 
+\hyperlink{instruction_8h_a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c}{\-H\-A\-L\-T}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Codes opérations. \end{DoxyCompactList}\item 
+enum \hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8}{\-Condition} \{ \*
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01}{\-N\-C}, 
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f}{\-E\-Q}, 
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db}{\-N\-E}, 
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892}{\-G\-T}, 
+\*
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce}{\-G\-E}, 
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571}{\-L\-T}, 
+\hyperlink{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61}{\-L\-E}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{instruction_8h_a437080d5e8c504588a47d0dba468492f}{print\-\_\-instruction} (\hyperlink{union_instruction}{\-Instruction} instr, unsigned addr)
+\begin{DoxyCompactList}\small\item\em \-Impression d'une instruction sous forme lisible (désassemblage) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{instruction_8h_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}{cop\-\_\-names} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Forme imprimable des codes opérations. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{instruction_8h_a4cf35570c7b75e596c642031544688e0}{condition\-\_\-names} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Forme imprimable des conditions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Description du jeu d'instruction. 
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{instruction_8h_ac2c134441907afe0f436508849b98cd2}{\index{instruction.\-h@{instruction.\-h}!\-Instruction@{\-Instruction}}
+\index{\-Instruction@{\-Instruction}!instruction.h@{instruction.\-h}}
+\subsubsection[{\-Instruction}]{\setlength{\rightskip}{0pt plus 5cm}typedef union {\bf \-Instruction}  {\bf \-Instruction}}}\label{instruction_8h_ac2c134441907afe0f436508849b98cd2}
+
+
+\-Structure d'une instruction. 
+
+\-Toutes les instrcutions occupent un mot machine de 32 bits. \-Il y a différents formats possibles selon le type de l'instruction et de ses opérandes.
+
+\begin{DoxyNote}{\-Note}
+\-Bien entendu, on aurait pu se contenter de décrire une instruction comme un mot de 32 bits ({\ttfamily uint32\-\_\-t}) et extraire les différents champs à coup de masquage, d'opérations bit à bit ou autres décalages. \-Mais pourquoi ne pas laisser le compilateur faire toutes ces horreurs à notre place ? \-Pour cela nous utilisons une union pour représenter les différents formats et des champs de bits pour représenter les différents constituants de l'instruction.
+
+\-Ceci a un inconvénient (léger) \-: les champs de bits ne s'appliquent qu'à des types de nature entière et pas à des structures ni des unions. \-Ceci nous oblige donc à avoir une union de structures, chaque structure reprenant les champs communs. 
+\end{DoxyNote}
+\hypertarget{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}{\index{instruction.\-h@{instruction.\-h}!\-Word@{\-Word}}
+\index{\-Word@{\-Word}!instruction.h@{instruction.\-h}}
+\subsubsection[{\-Word}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\-\_\-t {\bf \-Word}}}\label{instruction_8h_a0b5b15ce5f3a75b5dd0de6643cd3d958}
+
+
+\-Type d'un mot de donnée. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}{\index{instruction.\-h@{instruction.\-h}!\-Code\-\_\-\-Op@{\-Code\-\_\-\-Op}}
+\index{\-Code\-\_\-\-Op@{\-Code\-\_\-\-Op}!instruction.h@{instruction.\-h}}
+\subsubsection[{\-Code\-\_\-\-Op}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Code\-\_\-\-Op}}}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6}
+
+
+\-Codes opérations. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-I\-L\-L\-O\-P@{\-I\-L\-L\-O\-P}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-I\-L\-L\-O\-P@{\-I\-L\-L\-O\-P}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2}{\-I\-L\-L\-O\-P}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad1bcea5caa46727ab4e411cffaa236f2}
+}]\hyperlink{union_instruction}{\-Instruction} illégale. \index{\-N\-O\-P@{\-N\-O\-P}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-N\-O\-P@{\-N\-O\-P}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026}{\-N\-O\-P}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026}
+}]\hyperlink{union_instruction}{\-Instruction} sans effet. \index{\-L\-O\-A\-D@{\-L\-O\-A\-D}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-L\-O\-A\-D@{\-L\-O\-A\-D}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391}{\-L\-O\-A\-D}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391}
+}]\-Chargement d'un registre. \index{\-S\-T\-O\-R\-E@{\-S\-T\-O\-R\-E}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-S\-T\-O\-R\-E@{\-S\-T\-O\-R\-E}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480}{\-S\-T\-O\-R\-E}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480}
+}]\-Rangement du contenu d'un registre. \index{\-A\-D\-D@{\-A\-D\-D}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-A\-D\-D@{\-A\-D\-D}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909}{\-A\-D\-D}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909}
+}]\-Addition à un registre. \index{\-S\-U\-B@{\-S\-U\-B}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-S\-U\-B@{\-S\-U\-B}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da}{\-S\-U\-B}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da}
+}]\-Soustraction d'un registre. \index{\-B\-R\-A\-N\-C\-H@{\-B\-R\-A\-N\-C\-H}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-B\-R\-A\-N\-C\-H@{\-B\-R\-A\-N\-C\-H}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e}{\-B\-R\-A\-N\-C\-H}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e}
+}]\-Branchement conditionnel ou non. \index{\-C\-A\-L\-L@{\-C\-A\-L\-L}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-C\-A\-L\-L@{\-C\-A\-L\-L}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8}{\-C\-A\-L\-L}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8}
+}]\-Appel de sous-\/programme. \index{\-R\-E\-T@{\-R\-E\-T}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-R\-E\-T@{\-R\-E\-T}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464}{\-R\-E\-T}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464}
+}]\-Retour de sous-\/programme. \index{\-P\-U\-S\-H@{\-P\-U\-S\-H}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-P\-U\-S\-H@{\-P\-U\-S\-H}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493}{\-P\-U\-S\-H}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493}
+}]\-Empilement sur la pile d'exécution. \index{\-P\-O\-P@{\-P\-O\-P}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-P\-O\-P@{\-P\-O\-P}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa}{\-P\-O\-P}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa}
+}]\-Dépilement de la pile d'exécution. \index{\-H\-A\-L\-T@{\-H\-A\-L\-T}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-H\-A\-L\-T@{\-H\-A\-L\-T}}\item[{\em 
+\hypertarget{instruction_8h_a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c}{\-H\-A\-L\-T}\label{instruction_8h_a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c}
+}]\-Arrêt (normal) du programme. \end{description}
+\end{Desc}
+
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8}{\index{instruction.\-h@{instruction.\-h}!\-Condition@{\-Condition}}
+\index{\-Condition@{\-Condition}!instruction.h@{instruction.\-h}}
+\subsubsection[{\-Condition}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf \-Condition}}}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8}
+
+
+\-Conditions. 
+
+\-Ces valeurs sont associées à l'instruction de branchement ({\ttfamily \-B\-R\-A\-N\-C\-H} et {\ttfamily \-C\-A\-L\-L}) et déterminent la condition à tester par référence à la valeur du code condition (\hyperlink{machine_8h_a4bc92b6f72076bb5dd651a143f58a2c3}{\-Condition\-\_\-\-Code}).
+
+\-Une valeur de ce type remplace le numéro de registres dans les isntructions {\ttfamily \-B\-R\-A\-N\-C\-H} et {\ttfamily \-C\-A\-L\-L}. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-N\-C@{\-N\-C}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-N\-C@{\-N\-C}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01}{\-N\-C}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a3dbd1016ea99d087d747530418b89a01}
+}]\-Pas de condition (nrachement inconditionnel) \index{\-E\-Q@{\-E\-Q}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-E\-Q@{\-E\-Q}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f}{\-E\-Q}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f}
+}]Égal à 0. \index{\-N\-E@{\-N\-E}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-N\-E@{\-N\-E}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db}{\-N\-E}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db}
+}]\-Différent de 0. \index{\-G\-T@{\-G\-T}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-G\-T@{\-G\-T}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892}{\-G\-T}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892}
+}]\-Strictement positif. \index{\-G\-E@{\-G\-E}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-G\-E@{\-G\-E}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce}{\-G\-E}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce}
+}]\-Positif ou nul. \index{\-L\-T@{\-L\-T}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-L\-T@{\-L\-T}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571}{\-L\-T}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571}
+}]\-Strictement négatif. \index{\-L\-E@{\-L\-E}!instruction.\-h@{instruction.\-h}}\index{instruction.\-h@{instruction.\-h}!\-L\-E@{\-L\-E}}\item[{\em 
+\hypertarget{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61}{\-L\-E}\label{instruction_8h_ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61}
+}]\-Négatif ou null. \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{instruction_8h_a437080d5e8c504588a47d0dba468492f}{\index{instruction.\-h@{instruction.\-h}!print\-\_\-instruction@{print\-\_\-instruction}}
+\index{print\-\_\-instruction@{print\-\_\-instruction}!instruction.h@{instruction.\-h}}
+\subsubsection[{print\-\_\-instruction}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf print\-\_\-instruction} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Instruction}}]{instr, }
+\item[{unsigned}]{addr}
+\end{DoxyParamCaption}
+)}}\label{instruction_8h_a437080d5e8c504588a47d0dba468492f}
+
+
+\-Impression d'une instruction sous forme lisible (désassemblage) 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em instr} & l'instruction à imprimer \\
+\hline
+{\em addr} & son adresse \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{instruction_8h_a4cf35570c7b75e596c642031544688e0}{\index{instruction.\-h@{instruction.\-h}!condition\-\_\-names@{condition\-\_\-names}}
+\index{condition\-\_\-names@{condition\-\_\-names}!instruction.h@{instruction.\-h}}
+\subsubsection[{condition\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf condition\-\_\-names}\mbox{[}$\,$\mbox{]}}}\label{instruction_8h_a4cf35570c7b75e596c642031544688e0}
+
+
+\-Forme imprimable des conditions. 
+
+\hypertarget{instruction_8h_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}{\index{instruction.\-h@{instruction.\-h}!cop\-\_\-names@{cop\-\_\-names}}
+\index{cop\-\_\-names@{cop\-\_\-names}!instruction.h@{instruction.\-h}}
+\subsubsection[{cop\-\_\-names}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf cop\-\_\-names}\mbox{[}$\,$\mbox{]}}}\label{instruction_8h_ae5e0c6bef1ffc3adc867e3ea4b9a57c3}
+
+
+\-Forme imprimable des codes opérations. 
+

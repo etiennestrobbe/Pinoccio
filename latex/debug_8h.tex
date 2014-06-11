@@ -1,0 +1,42 @@
+\hypertarget{debug_8h}{\section{debug.\-h \-File \-Reference}
+\label{debug_8h}\index{debug.\-h@{debug.\-h}}
+}
+
+
+\-Fonctions de mise au point interactive.  
+
+
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include \char`\"{}machine.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{debug_8h_a3a88fdc680b7a1ae8c4c7c8ddee730ab}{debug\-\_\-ask} (\hyperlink{struct_machine}{\-Machine} $\ast$pmach)
+\begin{DoxyCompactList}\small\item\em \-Dialogue de mise au point interactive pour l'instruction courante. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Fonctions de mise au point interactive. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{debug_8h_a3a88fdc680b7a1ae8c4c7c8ddee730ab}{\index{debug.\-h@{debug.\-h}!debug\-\_\-ask@{debug\-\_\-ask}}
+\index{debug\-\_\-ask@{debug\-\_\-ask}!debug.h@{debug.\-h}}
+\subsubsection[{debug\-\_\-ask}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf debug\-\_\-ask} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Machine} $\ast$}]{pmach}
+\end{DoxyParamCaption}
+)}}\label{debug_8h_a3a88fdc680b7a1ae8c4c7c8ddee730ab}
+
+
+\-Dialogue de mise au point interactive pour l'instruction courante. 
+
+\-Cette fonction gère le dialogue pour l'option {\ttfamily -\/d} (debug). \-Dans ce mode, elle est invoquée après l'exécution de chaque instruction. \-Elle affiche le menu de mise au point et on exécute le choix de l'utilisateur. \-Si cette fonction retourne faux, on abandonne le mode de mise au point interactive pour les instructions suivantes et jusqu'à la fin du programme.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em mach} & la machine/programme en cours de simulation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+vrai si l'on doit continuer en mode debug, faux sinon 
+\end{DoxyReturn}
