@@ -12,10 +12,10 @@ Instruction text[] = {
     
     {.instr_generic =  {CALL, 	 false, false, 	0, 	10	}},  // 00
     {.instr_indexed =  {CALL,  	false, true, 	0,10,  1	}},  // 01
-    {.instr_generic =  {HALT, 	 false, false, 	0, 	0	}},  // 02
-    {.instr_generic =  {NOP, 	 false, false, 	0, 	0	}},  // 03
-    {.instr_generic =  {NOP, 	 false, false, 	0, 	0	}},  // 04
-    {.instr_generic =  {BRANCH,  false, false, 	0, 	2	}},  // 05
+    {.instr_generic =  {PUSH, 	 false, false, 	0, 	2	}},  // 02
+    {.instr_generic =  {PUSH, 	 true, false, 	0, 	22	}},  // 03
+    {.instr_generic =  {POP, 	 false, false, 	0, 	0	}},  // 04
+    {.instr_generic =  {HALT,  false, false, 	0, 	2	}},  // 05
     {.instr_generic =  {NOP, 	 false, false, 	0, 	0	}},  // 06
     {.instr_generic =  {NOP, 	 false, false, 	0, 	0	}},  // 07
     {.instr_generic =  {NOP, 	 false, false, 	0, 	0	}},  // 08
@@ -34,7 +34,6 @@ Instruction text[] = {
     {.instr_generic =  {SUB, 	 false,  false,   3,  0	}},  // 21
     {.instr_indexed =  {SUB, 	 false, true, 0, 2 ,0	}},  // 22
     {.instr_generic =  {RET, 	 false, false, 	0, 	0	}},  // 23
-    
     
     
     
