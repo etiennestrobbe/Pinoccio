@@ -34,12 +34,12 @@ bool debug_ask(Machine *pmach){
 		printf("DEBUG ? ");
 		fgets(c,size,stdin);
 		if(strcmp(c,"RET\n")==0 || strcmp(c,"\n")==0){
-			simul_instruction(pmach);
+			return true;
 		}			
 		switch(*c){
 			case 'h':print_help();break;
 			case 'c':debug = false;break;
-			case 's':simul_instruction(pmach);break;
+			case 's':return true;
 			case 'm':print_cpu(pmach);print_data(pmach);break;
 			case 'r':print_cpu(pmach);break;
 			case 'd':print_data(pmach);break;
@@ -54,17 +54,6 @@ bool debug_ask(Machine *pmach){
 	
 }
 
-void simul_instruction(Machine *pmach){
-	Instruction *text = pmach->_text;
-	if(text[pmach->_pc].instr_generic._cop == LAST_COP){
-		simul(pmach,false);
-		print_end(pmach);
-		exit(0);	
-	}
-	else{
-		simul(pmach,true);
-	}	
-}
 
 /**
  * \fn void print help()
