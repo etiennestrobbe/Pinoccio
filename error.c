@@ -1,6 +1,24 @@
 #include <stdio.h>
 #include "error.h"
+
+/**
+ * \file error.c
+ * \brief implementation de error.h
+ * \version 0.3
+ * \date 10 Juin 2014
+ * \author Maylanie
+ */
  
+
+//! Affichage d'une erreur et fin du simulateur
+/*!
+ * \note Toutes les erreurs étant fatales on ne revient jamais de cette
+ * fonction. L'attribut \a noreturn est une extension (non standard) de GNU C
+ * qui indique ce fait.
+ * 
+ * \param err code de l'erreur
+ * \param addr adresse de l'erreur
+ */
 void error(Error err, unsigned addr){
 	
 	//verifie que l'erreur existe:
@@ -37,6 +55,11 @@ void error(Error err, unsigned addr){
 	exit(0);
 }
 
+//! Affichage d'un avertissement
+/*!
+ * \param warn code de l'avertissement
+ * \param addr adresse de l'erreur
+ */
 void warning(Warning warn, unsigned addr){
 	if (warn == WARN_HALT){
 		printf("WARNING: HALT reached at address 0x%04x\n", addr);
