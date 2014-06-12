@@ -161,30 +161,46 @@ void print_program 	( 	Machine *  	pmach	){
 void read_program(Machine *pmach, const char *programfile){
 	int fichier;
 	unsigned textsize, datasize, dataend;
-	char c[50];	
-		
-	fichier = open(programfile, O_RDONLY); // fichier vaut -1 si open n'arrive pas a ouvrir le fichier.
+
+	if ((fichier = open(programfile, O_RDONLY)) == -1){ // fichier vaut -1 si open n'arrive pas a ouvrir le fichier.
+		printf("Le fichier binaire ne peut pas être lu");
+		exit(1);
+	}
 	
 	// Les 3 premiers entier non signés
-	read(fichier, &c, sizeof(pmach -> _textsize));
-	read(fichier, &c, sizeof(pmach -> _datasize));
-	read(fichier, &c, sizeof(pmach -> _dataend));
+	if ((read(fichier, &textsize, sizeof(pmach -> _textsize))) != sizeof(pmach -> _textsize)){
+		printf("Erreur lors de la détermination de textsize");
+		exit(1);
+	} 
+	if ((read(fichier, &datasize, sizeof(pmach -> _datasize))) != sizeof(pmach -> _datasize)){
+		printf("Erreur lors de la détermination de datasize");
+		exit(1);
+	}	
+	if ((read(fichier, &dataend, sizeof(pmach -> _dataend))) != sizeof(pmach -> _dataend)){
+		printf("Erreur lors	de la détermination de dataend");
+		exit(1);
+	}	
 
 	//Les instructions
 	Instruction *text = malloc(textsize * sizeof(Instruction));
-	for (int i = 0; i < textsize; i++){
-		read(fichier, &text, sizeof(text));
+	if (read(fichier, text, textsize * sizeof(Instruction)) != textsize * sizeof(Instruction)){ //Joue avec text !
+		printf("Erreur lors de la lecture des instructions");
+		exit(1);
 	}
 	//Les données
 	Word *data = malloc(datasize * sizeof(Word));
-	for (int i = 0; i < datasize; i++){
-		read(fichier, &data, sizeof(data));
+	if (read(fichier, data, datasize * sizeof(Word)) != datasize * sizeof(Word)){
+		printf("Erreur lors de la lecture des données");
+		exit(1);
 	}
 
-	close(fichier);
+	if (close(fichier) != 0){ // 0 veut dire que le fichier a été fermé sans problème 
+		printf("Erreur de fermeture du fichier binaire");
+	}
+
 	load_program(pmach, textsize, text, datasize, data, dataend);
-	free(text);
-	free(data);
+	//free(text); Pourquoi ne faut-il pas les mettre ?
+	//free(data);
 }
 
 //! Affichage du programme et des données

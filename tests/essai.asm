@@ -6,6 +6,7 @@
 		//Programme Principal
 main	EQU *
 		LOAD R00, #15
+		ADD R00, #3
 		HALT
 
 		END
@@ -19,5 +20,6 @@ main	EQU *
 result  WORD 0
 op1     WORD 20
 op2     WORD 5
+op3		WORD 6
         
         END
