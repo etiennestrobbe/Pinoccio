@@ -4,10 +4,14 @@
 #include <stdlib.h>
 #define MAX 50
 
+/**
+ * \file debug.c
+ * \brief implementation du mode debug
+ * \author Etienne
+ * \date 10 Juin 2014
+ */
 
 void print_help();
-void print_end();
-void simul_instruction(Machine *pmach);
 bool debug = true;
 
 //! Dialogue de mise au point interactive pour l'instruction courante.
@@ -28,12 +32,12 @@ bool debug_ask(Machine *pmach){
 		printf("DEBUG ? ");
 		fgets(c,size,stdin);
 		if(strcmp(c,"RET\n")==0 || strcmp(c,"\n")==0){
-			simul_instruction(pmach);
+			return true;
 		}			
 		switch(*c){
 			case 'h':print_help();break;
 			case 'c':debug = false;break;
-			case 's':simul_instruction(pmach);break;
+			case 's':return true;
 			case 'm':print_cpu(pmach);print_data(pmach);break;
 			case 'r':print_cpu(pmach);break;
 			case 'd':print_data(pmach);break;
@@ -44,22 +48,14 @@ bool debug_ask(Machine *pmach){
 			
 	}
 	return debug;
-	
-	
 }
 
-void simul_instruction(Machine *pmach){
-	Instruction *text = pmach->_text;
-	if(text[pmach->_pc].instr_generic._cop == LAST_COP){
-		simul(pmach,false);
-		print_end(pmach);
-		exit(0);	
-	}
-	else{
-		simul(pmach,true);
-	}	
-}
 
+/**
+ * \fn void print_help()
+ * \brief Fonction qui affiche les commandes d'options
+ * \author Etienne
+ */
 void print_help(){
 	printf("\
 	Available commands:\n\
@@ -72,11 +68,4 @@ void print_help(){
 	t	print text (program) memory\n\
 	p	print text (program) memory\n\
 	m	print registers and data memory\n");
-}
-
-void print_end(Machine *pmach){
-	printf("*** Machine state after execution ***\n");
-	print_program(pmach);
-	print_data(pmach);
-	print_cpu(pmach);
 }

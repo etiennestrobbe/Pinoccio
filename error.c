@@ -62,7 +62,7 @@ void error(Error err, unsigned addr){
  */
 void warning(Warning warn, unsigned addr){
 	if (warn == WARN_HALT){
-		printf("ERR_SEGSTACK at adress 0x%04x : Violation of size of stack's segment \n", addr);
+		printf("WARNING: HALT reached at address 0x%04x\n", addr);
 	}
 }
 
