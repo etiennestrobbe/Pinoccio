@@ -9,39 +9,54 @@ int is_in_indexed_mode(Instruction instr){
 	return (instr.instr_generic._indexed);
 }
 
-void check_condition(Machine *pmach,Instruction instr){
+bool check_condition(Machine *pmach,Instruction instr){
 	if(instr.instr_generic._regcond > 6 || instr.instr_generic._regcond < 0) error(ERR_CONDITION,(pmach->_pc)-1);
+	switch(instr.instr_generic._regcond){
+		case NC:return true;
+		case EQ:return ((pmach->_cc) == CC_Z);
+		case NE:return ((pmach->_cc) != CC_Z);
+		case GT:return ((pmach->_cc) == CC_P);
+		case GE:return ((pmach->_cc) == CC_P || (pmach->_cc) == CC_Z);
+		case LT:return ((pmach->_cc) == CC_N);
+		case LE:return ((pmach->_cc) == CC_N || (pmach->_cc) == CC_Z);
+		default:error(ERR_CONDITION,(pmach->_pc)-1);
+	}
+	return false;	
 }
 
 void check_adresse_data(Machine *pmach, int adresse){
-	if (adresse < 0 || adresse > (pmach -> _dataend))error(ERR_SEGDATA,(pmach ->_pc-1));
+	if (adresse < 0 || adresse > (pmach -> _datasize))error(ERR_SEGDATA,(pmach ->_pc-1));
 }
 void check_adresse_text(Machine *pmach, int adresse){
 	if (adresse < 0 || adresse > (pmach -> _textsize))error(ERR_SEGTEXT,(pmach ->_pc-1));
 }
 
 int get_addr(Machine *pmach,Instruction instr){
-	return (is_in_indexed_mode(instr))?pmach->_registers[instr.instr_indexed._rindex]+instr.instr_indexed._offset:instr.instr_absolute._address;
+	return (is_in_indexed_mode(instr))?(pmach->_registers[instr.instr_indexed._rindex])+instr.instr_indexed._offset:instr.instr_absolute._address;
+}
+
+void update_condition(Machine *pmach, unsigned int condition) {
+	(pmach->_cc) = (condition == 0)?CC_Z:(condition>0)?CC_P:CC_N;
 }
 
 void exec_illop(Machine *pmach, Instruction instr){
-	error(ERR_ILLEGAL, (pmach->_pc -1)); // Peut-être inutile
+	error(ERR_ILLEGAL, (pmach->_pc -1)); 
 }
 
 void exec_load(Machine *pmach, Instruction instr){
 	// Mode immediat
+	int reg = instr.instr_generic._regcond;
 	if (is_in_immediate_mode(instr)){
 		int val = instr.instr_immediate._value;
-		int reg = instr.instr_immediate._regcond;
 		(pmach->_registers[reg])=val;
 	}
 	// Mode addresse
 	else{
 		int adresse = get_addr(pmach, instr);
-		int reg = instr.instr_generic._regcond;
 		check_adresse_data(pmach, adresse);
 		(pmach->_registers[reg])=(pmach->_data[adresse]);
 	}
+	update_condition(pmach,(pmach->_registers)[reg]);
 }
 
 void exec_store(Machine *pmach, Instruction instr){
@@ -60,26 +75,26 @@ void exec_store(Machine *pmach, Instruction instr){
 }
 
 void exec_add(Machine *pmach,Instruction instr){
+	int reg = instr.instr_generic._regcond;
 	// mode immediat -> traiter le cas signe
 	if(is_in_immediate_mode(instr)){
 		int val = instr.instr_immediate._value;
-		int reg = instr.instr_immediate._regcond;
 		(pmach->_registers[reg])+=val;
 	}
 	// mode addresse
 	else{
 		int adresse = get_addr(pmach,instr);
-		int reg = instr.instr_generic._regcond;
 		check_adresse_data(pmach,adresse);		
 		(pmach->_registers[reg])+=(pmach->_data[adresse]);
 	}
+	update_condition(pmach,(pmach->_registers)[reg]);
 }
 
 
 void exec_branch(Machine *pmach,Instruction instr){
 	if(is_in_immediate_mode(instr)) error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	check_condition(pmach,instr);
-	if(pmach->_cc == instr.instr_generic._regcond){
+	if(check_condition(pmach,instr)){
 		int adresse = get_addr(pmach,instr);
 		check_adresse_text(pmach,adresse);
 		pmach->_pc = adresse;	
@@ -87,27 +102,25 @@ void exec_branch(Machine *pmach,Instruction instr){
 }
 
 void exec_sub(Machine *pmach, Instruction instr){
+	int reg = instr.instr_generic._regcond;
 	// mode immediat
 	if (is_in_immediate_mode(instr)){
 		int val = instr.instr_immediate._value;
-		int reg = instr.instr_immediate._regcond;
 		(pmach->_registers[reg])-=val;		
 	}
 	// mode addresse
 	else{
 		int adresse = get_addr(pmach,instr);
-		int reg = instr.instr_generic._regcond;
-		
 		check_adresse_data(pmach,adresse);
 		(pmach -> _registers[reg])-=(pmach -> _data[adresse]);
-		
 	}
+	update_condition(pmach,(pmach->_registers)[reg]);
 }
 
 void exec_call(Machine *pmach,Instruction instr){
 	if(is_in_immediate_mode(instr))error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	check_condition(pmach,instr);
-	if(pmach->_cc == instr.instr_generic._regcond){
+	if(check_condition(pmach,instr)){
 		pmach->_data[(pmach->_sp)--] = pmach->_pc;
 		int adresse = get_addr(pmach,instr);
 		check_adresse_text(pmach,adresse);
@@ -116,8 +129,8 @@ void exec_call(Machine *pmach,Instruction instr){
 }
 
 void exec_ret(Machine *pmach,Instruction instr){
-	check_adresse_text(pmach,(pmach->_sp)+1);
-	pmach->_pc = pmach->_data[++(pmach->_sp)];
+	check_adresse_text(pmach,++(pmach->_sp));
+	pmach->_pc = pmach->_data[(pmach->_sp)];
 }
 
 void exec_push(Machine *pmach, Instruction instr){
