@@ -12,6 +12,7 @@
  * \file machine.c
  * \brief implementation de la machine
  * \version 0.1
+ * \author Etienne.S Rémy.D Maylanie.M
  * \date 11 Juin 2014
  * 
  * Implémentation de la machine décrite dans machine.h
