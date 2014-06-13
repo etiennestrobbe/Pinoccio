@@ -4,6 +4,7 @@
 /**
  * \file exec.c
  * \brief Exécution d'une instruction
+ * \author Etienne.S Rémy.D
  * \version 0.1
  * \date 11 Juin 2014
  * 
