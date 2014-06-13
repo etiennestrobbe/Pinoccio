@@ -4,8 +4,7 @@
  * \author Rémy.D
  * \date 10 juin 2014
  *
- * Programme permettant l'affichage d'une instruction sous la forme : COP REG, OP
- *
+ * Programme permettant l'affichage d'une instruction sous la forme : COP REG, OP.
  */
 #include "instruction.h"
 #include <stdio.h>
