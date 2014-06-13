@@ -3,18 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Pinocchio: instruction.h Source File</title>
+<title>PFS-gr19: instruction.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
+
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -32,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Pinocchio
+   <div id="projectname">PFS-gr19
    
    </div>
-   <div id="projectbrief">projet de c</div>
+   
   </td>
   
   
@@ -79,19 +74,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('instruction_8h.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="headertitle">
 <div class="title">instruction.h</div>  </div>
@@ -133,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00061"></a><a class="code" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d">00061</a>         <span class="keywordtype">bool</span> <a class="code" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d" title="Adressage immédiat ?">_immediate</a> : 1;    
 <a name="l00062"></a><a class="code" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14">00062</a>         <span class="keywordtype">bool</span> <a class="code" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14" title="Adressage indirect ?">_indexed</a> : 1;      
 <a name="l00063"></a><a class="code" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0">00063</a>         <span class="keywordtype">unsigned</span> <a class="code" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0" title="Numéro de registre ou condition.">_regcond</a> : 4;  
-<a name="l00064"></a><a class="code" href="union_instruction.html#a1516ca58cfa2a856fe67d47d67859fba">00064</a>         <span class="keywordtype">unsigned</span> <a class="code" href="union_instruction.html#a1516ca58cfa2a856fe67d47d67859fba">_pad</a> : 20;     <span class="comment">//&lt;! Format variable...</span>
+<a name="l00064"></a>00064         <span class="keywordtype">unsigned</span> _pad : 20;     <span class="comment">//&lt;! Format variable...</span>
 <a name="l00065"></a>00065     } <a class="code" href="union_instruction.html#a655fbddb807dcc35363d6149dbb26237" title="Format générique : les premiers champs sont communs.">instr_generic</a>;
 <a name="l00066"></a>00066 
 <a name="l00068"></a>00068     <span class="keyword">struct </span>
@@ -187,11 +169,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00130"></a>00130 <span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0" title="Forme imprimable des conditions.">condition_names</a>[];
 <a name="l00131"></a>00131 
 <a name="l00133"></a>00133 
-<a name="l00137"></a>00137 <span class="keywordtype">void</span> <a class="code" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Impression d&#39;une instruction sous forme lisible (désassemblage)">print_instruction</a>(<a class="code" href="union_instruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr, <span class="keywordtype">unsigned</span> addr);
+<a name="l00137"></a>00137 <span class="keywordtype">void</span> <a class="code" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f" title="Affiche une instruction en entière.">print_instruction</a>(<a class="code" href="union_instruction.html" title="Structure d&#39;une instruction.">Instruction</a> instr, <span class="keywordtype">unsigned</span> addr);
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
-</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -206,16 +187,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="instruction_8h.html">instruction.h</a>      </li>
 
-    <li class="footer">Generated on Wed Jun 11 2014 10:55:49 for Pinocchio by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
-   </ul>
- </div>
 
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
 
 </body>
 </html>

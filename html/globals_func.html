@@ -3,18 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Pinocchio: Globals</title>
+<title>PFS-gr19: Globals</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
+
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -32,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Pinocchio
+   <div id="projectname">PFS-gr19
    
    </div>
-   <div id="projectbrief">projet de c</div>
+   
   </td>
   
   
@@ -89,22 +84,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals_defs.html"><span>Defines</span></a></li>
     </ul>
   </div>
-</div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+    </ul>
   </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
 </div>
-<script type="text/javascript">
-  initNavTree('globals_func.html','');
-</script>
-<div id="doc-content">
 <div class="contents">
-&#160;<ul>
+&#160;
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>check_adresse_data()
+: <a class="el" href="exec_8c.html#a7bb129b6417ab5fbec1f53b83b46a5ec">exec.c</a>
+</li>
+<li>check_adresse_text()
+: <a class="el" href="exec_8c.html#a63d59ba962a550926854e9baa014e299">exec.c</a>
+</li>
+<li>check_condition()
+: <a class="el" href="exec_8c.html#a80b654c1ab28d122392dbc4b71f48d36">exec.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>debug_ask()
 : <a class="el" href="debug_8c.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab">debug.c</a>
 , <a class="el" href="debug_8h.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab">debug.h</a>
@@ -113,39 +126,100 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="exec_8h.html#a41471ced34d27777447c2609173af7de">exec.h</a>
 , <a class="el" href="exec_8c.html#a41471ced34d27777447c2609173af7de">exec.c</a>
 </li>
-<li>dump_memory()
-: <a class="el" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">machine.h</a>
+<li>do_one_step()
+: <a class="el" href="machine_8c.html#ab855d2a2b6579f8f3a5224167891fc89">machine.c</a>
 </li>
+<li>dump_memory()
+: <a class="el" href="machine_8c.html#aa69650bbdba0125402a22c4451755412">machine.c</a>
+, <a class="el" href="machine_8h.html#aa69650bbdba0125402a22c4451755412">machine.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
 <li>error()
 : <a class="el" href="error_8c.html#a531bb138b38aef758b45a442aa53938a">error.c</a>
 , <a class="el" href="error_8h.html#a531bb138b38aef758b45a442aa53938a">error.h</a>
 </li>
 <li>exec_add()
-: <a class="el" href="exec_8c.html#aed8cd0d674225e8d6a2f1c963b5ff81f">exec.c</a>
+: <a class="el" href="exec_8c.html#ab29f4e27336444f0f4f3d303a7513025">exec.c</a>
 </li>
+<li>exec_branch()
+: <a class="el" href="exec_8c.html#ade5046727c94db0165baa4092e5ea9e9">exec.c</a>
+</li>
+<li>exec_call()
+: <a class="el" href="exec_8c.html#a79007627f079cb6f1e6c7a8ff3973c4c">exec.c</a>
+</li>
+<li>exec_halt()
+: <a class="el" href="exec_8c.html#a2eaf858e135a221546caf3debd554e4c">exec.c</a>
+</li>
+<li>exec_illop()
+: <a class="el" href="exec_8c.html#af58b95285ac3ea05ec6ee9e6e60e038b">exec.c</a>
+</li>
+<li>exec_load()
+: <a class="el" href="exec_8c.html#aeeca9aba3d3f265b00de6f5ce9a08050">exec.c</a>
+</li>
+<li>exec_pop()
+: <a class="el" href="exec_8c.html#a68379bbda0e08f46fbe555fd29e4edc4">exec.c</a>
+</li>
+<li>exec_push()
+: <a class="el" href="exec_8c.html#aab8d5cbcfa79b1f0146467f0fdb44a32">exec.c</a>
+</li>
+<li>exec_ret()
+: <a class="el" href="exec_8c.html#ab87c535c97884a58bdacb460744bce46">exec.c</a>
+</li>
+<li>exec_store()
+: <a class="el" href="exec_8c.html#a673569eec34bef6b3ccf4e89941e4efb">exec.c</a>
+</li>
+<li>exec_sub()
+: <a class="el" href="exec_8c.html#ae4effa11a25cf3381a9dbde19bb6316d">exec.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>get_addr()
+: <a class="el" href="exec_8c.html#a5a4b2dd4fe450219b6e5dbd32497d42c">exec.c</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>is_in_immediate_mode()
 : <a class="el" href="exec_8c.html#a3692dcc0467443a945764289824f5245">exec.c</a>
 </li>
 <li>is_in_indexed_mode()
 : <a class="el" href="exec_8c.html#ac1bf538d3452c1591786328fa956cd33">exec.c</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>load_program()
-: <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">machine.h</a>
+: <a class="el" href="machine_8c.html#a9ac26e6f927cf2956823b4f9588d44df">machine.c</a>
+, <a class="el" href="machine_8h.html#a9ac26e6f927cf2956823b4f9588d44df">machine.h</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>main()
 : <a class="el" href="test__simul_8c.html#a0ddf1224851353fc92bfbff6f499fa97">test_simul.c</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>print_condition()
 : <a class="el" href="instruction_8c.html#af60bd482be33f6422e76e4da4b5b8ee1">instruction.c</a>
 </li>
 <li>print_cpu()
-: <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">machine.h</a>
+: <a class="el" href="machine_8c.html#a87cfff30238b966cfc3c0c416d7076e9">machine.c</a>
+, <a class="el" href="machine_8h.html#a87cfff30238b966cfc3c0c416d7076e9">machine.h</a>
 </li>
 <li>print_data()
-: <a class="el" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">machine.h</a>
-</li>
-<li>print_end()
-: <a class="el" href="debug_8c.html#a70b4f468abdd60eb3fd8e7a17c44ced7">debug.c</a>
+: <a class="el" href="machine_8c.html#a549be6eaf631d871e9357513c748640d">machine.c</a>
+, <a class="el" href="machine_8h.html#a549be6eaf631d871e9357513c748640d">machine.h</a>
 </li>
 <li>print_help()
 : <a class="el" href="debug_8c.html#a853216ac51aa181669ff4d3de74058a7">debug.c</a>
@@ -158,24 +232,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="instruction_8c.html#ab96f3a4f54ea0f830aebeeeaf4d5aa38">instruction.c</a>
 </li>
 <li>print_program()
-: <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">machine.h</a>
+: <a class="el" href="machine_8c.html#aba3ce4987ef379073d9d3f31debf89e7">machine.c</a>
+, <a class="el" href="machine_8h.html#aba3ce4987ef379073d9d3f31debf89e7">machine.h</a>
 </li>
 <li>print_registre()
 : <a class="el" href="instruction_8c.html#af635442db57b983f3317cbf77da036a4">instruction.c</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>read_program()
-: <a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">machine.h</a>
+: <a class="el" href="machine_8c.html#ad7dd2f3017392a4e8dc0357de6371788">machine.c</a>
+, <a class="el" href="machine_8h.html#ac59b88844961c2479108151e24dd555a">machine.h</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>simul()
-: <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.h</a>
+: <a class="el" href="machine_8c.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.c</a>
+, <a class="el" href="machine_8h.html#ad0bfa0ce7434b963eea888d7b847ac3b">machine.h</a>
 </li>
-<li>simul_instruction()
-: <a class="el" href="debug_8c.html#a43b25a32af317ebd55e5806a0ee9cff7">debug.c</a>
-</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>trace()
 : <a class="el" href="exec_8c.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">exec.c</a>
 , <a class="el" href="exec_8h.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">exec.h</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
 <li>warning()
 : <a class="el" href="error_8c.html#aec2872edfc57849ea2557178dc2b2673">error.c</a>
 , <a class="el" href="error_8h.html#aec2872edfc57849ea2557178dc2b2673">error.h</a>
@@ -196,16 +286,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-</div>
-  <div id="nav-path" class="navpath">
-    <ul>
 
-    <li class="footer">Generated on Wed Jun 11 2014 10:55:49 for Pinocchio by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
-   </ul>
- </div>
 
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
 
 </body>
 </html>
