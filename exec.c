@@ -92,7 +92,7 @@ int get_addr(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param condition la nouvelle condition
  */
-void update_condition(Machine *pmach, unsigned int condition) {
+void update_condition(Machine *pmach, int condition) {
 	(pmach->_cc) = (condition == 0)?CC_Z:(condition>0)?CC_P:CC_N;
 }
 
@@ -257,10 +257,9 @@ void exec_push(Machine *pmach, Instruction instr){
 	if(is_in_immediate_mode(instr))val = instr.instr_immediate._value;
 	else{
 		int addr = get_addr(pmach,instr);
-		check_adresse_data(pmach,addr);
 		val = pmach->_data[addr];
 	}
-	if(pmach->_sp == 0)error(ERR_SEGSTACK,(pmach->_pc)-1);
+	if(pmach->_sp == pmach->_dataend)error(ERR_SEGSTACK,(pmach->_pc)-1);
 	pmach->_data[(pmach->_sp)--] = val;	
 }
 

@@ -24,6 +24,8 @@ extern const unsigned dataend;
 //! Taille utile du segment de données
 extern const unsigned datasize;  
 
+extern bool allocated;
+
 //! Help message.
 /*!
  * Printed with option \c -h.
@@ -117,6 +119,10 @@ int main(int argc, char *argv[])
     printf("\n*** Machine state after execution ***\n");
     print_cpu(&mach);
     print_data(&mach);
+    if(allocated){
+		free(mach._text);
+		free(mach._data);
+	}
 
     return 0; 
 }

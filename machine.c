@@ -16,7 +16,7 @@
  * 
  * Implémentation de la machine décrite dans machine.h
  */
-
+bool allocated = false;
 
 //! Chargement d'un programme
 /*!
@@ -38,6 +38,7 @@ void load_program 	( 	Machine *  	pmach,
 		Word  	data[datasize],
 		unsigned  	dataend 
 	){
+		
 		pmach->_textsize = textsize;
 		pmach->_text = text;
 		pmach->_datasize = datasize;
@@ -72,7 +73,13 @@ void print_cpu 	( 	Machine *  	pmach	){
 	printf("\n\n *** CPU ***\n\n");
 	
 	printf("PC: 0x%08x  \t", pmach->_pc);
-	printf("CC: 0x%08x \n \n", pmach->_cc);
+	switch(pmach->_cc){
+		case 1 : printf("CC: Z");break;
+		case 2 : printf("CC: P");break;
+		case 3 : printf("CC: N");break;
+		default:printf("CC: U");break;
+	}
+	printf("\n\n");
 	
 	int i;
 	int cnt = 0;
@@ -85,6 +92,7 @@ void print_cpu 	( 	Machine *  	pmach	){
 			printf("\n");
 		}
 	}
+	printf("\n");
 }
 	
 //! Affichage des données du programme
@@ -191,14 +199,14 @@ void read_program(Machine *pmach, const char *programfile){
 		printf("Erreur lors de la lecture des données");
 		exit(1);
 	}
+	load_program(pmach, textsize, text, datasize, data, dataend);
+	allocated = true;
 
 	if (close(fichier) != 0){ // 0 veut dire que le fichier a été fermé sans problème 
 		printf("Erreur de fermeture du fichier binaire");
 	}
 
-	load_program(pmach, textsize, text, datasize, data, dataend);
-	//free(text); Pourquoi ne faut-il pas les mettre ?
-	//free(data);
+	
 }
 
 //! Affichage du programme et des données
@@ -280,7 +288,7 @@ unsigned dataend = %d",pmach->_datasize,pmach->_dataend);
  */
 bool do_one_step(Machine *pmach){
 	Instruction instr = (pmach->_text)[(pmach->_pc)++];
-	trace("Executing",pmach,instr,(pmach->_pc));
+	trace("Executing",pmach,instr,(pmach->_pc)-1);
 	return decode_execute(pmach,instr);
 }
 
