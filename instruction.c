@@ -22,7 +22,6 @@ const char* condition_names[] = {"NC", "EQ", "NE", "GT", "GE", "LT", "LE"};
  */
 void print_registre(Instruction i){
 	(i.instr_generic._regcond >= 10) ? printf("R%d, ", i.instr_generic._regcond) : printf("R0%d, ", i.instr_generic._regcond);
-	// Ca dépote le ternaire !
 }
 
 /**
