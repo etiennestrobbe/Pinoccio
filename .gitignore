@@ -10,7 +10,5 @@ Simul_Proc_IS.pdf
 test_simul
 *.o
 *.bin
-test_simul
-prog.c
 
 /.project
