@@ -11,7 +11,7 @@ Instruction text[] = {
 //-------------------------------------------------------------
     
     {.instr_generic =  {LOAD, 	 true, false, 	0, 	4	}},  // 00
-    {.instr_generic =  {BRANCH,	 false, false, 	0, 	4	}},  // 01
+    {.instr_generic =  {BRANCH,	 true, false, 	0, 	4	}},  // 01
         
 };
 
