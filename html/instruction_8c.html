@@ -3,18 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Pinocchio: instruction.c File Reference</title>
+<title>PFS-gr19: instruction.c File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
+
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -32,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Pinocchio
+   <div id="projectname">PFS-gr19
    
    </div>
-   <div id="projectbrief">projet de c</div>
+   
   </td>
   
   
@@ -79,19 +74,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('instruction_8c.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
@@ -100,24 +82,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">instruction.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Affichage des instructions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="instruction_8h_source.html">instruction.h</a>&quot;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#af635442db57b983f3317cbf77da036a4">print_registre</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le registre de l'instruction.  <a href="#af635442db57b983f3317cbf77da036a4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#af60bd482be33f6422e76e4da4b5b8ee1">print_condition</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la condition de l'instruction.  <a href="#af60bd482be33f6422e76e4da4b5b8ee1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#ab96f3a4f54ea0f830aebeeeaf4d5aa38">print_operande</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'opérande de l'instruction: la valeur immédiate ou l'adresse absolue ou l'adresse indexée.  <a href="#ab96f3a4f54ea0f830aebeeeaf4d5aa38"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f">print_instruction</a> (<a class="el" href="union_instruction.html">Instruction</a> instr, unsigned addr)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Impression d'une instruction sous forme lisible (désassemblage)  <a href="#a437080d5e8c504588a47d0dba468492f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une instruction en entière.  <a href="#a437080d5e8c504588a47d0dba468492f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3">cop_names</a> [] = {&quot;ILLOP&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026">NOP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391">LOAD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480">STORE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909">ADD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da">SUB</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e">BRANCH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8">CALL</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464">RET</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493">PUSH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa">POP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c">HALT</a>&quot;}</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des codes opérations.  <a href="#ae5e0c6bef1ffc3adc867e3ea4b9a57c3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0">condition_names</a> [] = {&quot;NC&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f">EQ</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db">NE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892">GT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce">GE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571">LT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61">LE</a>&quot;}</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des conditions.  <a href="#a4cf35570c7b75e596c642031544688e0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae5e0c6bef1ffc3adc867e3ea4b9a57c3"></a><!-- doxytag: member="instruction.c::cop_names" ref="ae5e0c6bef1ffc3adc867e3ea4b9a57c3" args="[]" -->
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3">cop_names</a> [] = {&quot;ILLOP&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026">NOP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391">LOAD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480">STORE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909">ADD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da">SUB</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e">BRANCH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8">CALL</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464">RET</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493">PUSH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa">POP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c">HALT</a>&quot;}</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des codes opérations. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cf35570c7b75e596c642031544688e0"></a><!-- doxytag: member="instruction.c::condition_names" ref="a4cf35570c7b75e596c642031544688e0" args="[]" -->
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#a4cf35570c7b75e596c642031544688e0">condition_names</a> [] = {&quot;NC&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f">EQ</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db">NE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892">GT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce">GE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571">LT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61">LE</a>&quot;}</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forme imprimable des conditions. <br/></td></tr>
 </table>
-<hr/><h2>Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Affichage des instructions. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy.D </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>10 juin 2014</dd></dl>
+<p>Programme permettant l'affichage d'une instruction sous la forme : COP REG, OP. </p>
+</div><hr/><h2>Function Documentation</h2>
 <a class="anchor" id="af60bd482be33f6422e76e4da4b5b8ee1"></a><!-- doxytag: member="instruction.c::print_condition" ref="af60bd482be33f6422e76e4da4b5b8ee1" args="(Instruction i)" -->
 <div class="memitem">
 <div class="memproto">
@@ -132,6 +127,14 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Affiche la condition de l'instruction. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -160,11 +163,11 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Impression d'une instruction sous forme lisible (désassemblage) </p>
+<p>Affiche une instruction en entière. </p>
+<p>Impression d'une instruction sous forme lisible (désassemblage)</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">instr</td><td>l'instruction à imprimer </td></tr>
-    <tr><td class="paramname">addr</td><td>son adresse </td></tr>
+    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,6 +189,14 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Affiche l'opérande de l'instruction: la valeur immédiate ou l'adresse absolue ou l'adresse indexée. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="af635442db57b983f3317cbf77da036a4"></a><!-- doxytag: member="instruction.c::print_registre" ref="af635442db57b983f3317cbf77da036a4" args="(Instruction i)" -->
@@ -203,41 +214,17 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="a4cf35570c7b75e596c642031544688e0"></a><!-- doxytag: member="instruction.c::condition_names" ref="a4cf35570c7b75e596c642031544688e0" args="[]" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="instruction_8h.html#a4cf35570c7b75e596c642031544688e0">condition_names</a>[] = {&quot;NC&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a9efdc855f3c1477957fb50affec07f8f">EQ</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a4d3f872f5054b256b01ee4f2c8cf51db">NE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a12f5476fa04803e6cc72f2198730d892">GT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a558711b4a2a25070b970d85f5926d5ce">GE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a486aa221ceeeac475326e85d3d37f571">LT</a>&quot;, &quot;<a class="el" href="instruction_8h.html#ab6d907c41d48048e1eb203e15f2fc9a8a662ed4b51721a45f07d645d4ca099a61">LE</a>&quot;}</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Forme imprimable des conditions. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae5e0c6bef1ffc3adc867e3ea4b9a57c3"></a><!-- doxytag: member="instruction.c::cop_names" ref="ae5e0c6bef1ffc3adc867e3ea4b9a57c3" args="[]" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="instruction_8h.html#ae5e0c6bef1ffc3adc867e3ea4b9a57c3">cop_names</a>[] = {&quot;ILLOP&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6af811bef354b292ff0713c50d7652c026">NOP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a972dbcdf74cff71e20bdcfb53be9c391">LOAD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6afeb01cb4572ba190cd7932e49446c480">STORE</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6acfcf145f2788bf340ff3f3098bc54909">ADD</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a12b733d4941495e86811fe6ceeeff9da">SUB</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad9b20a9207fb2cd3021b9eb0b7c6fe5e">BRANCH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6abd0ebc08c262bab82a1882256d2d66e8">CALL</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ab2510768eaba5e52ba71678e19a65464">RET</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6ad263caec619c4d99e4684ba0fabd9493">PUSH</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6a061dcf4785583d8653942f2d252174fa">POP</a>&quot;, &quot;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6aa2fd6bbb0c07e28e835ba595e64df78c">HALT</a>&quot;}</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Forme imprimable des codes opérations. </p>
+<p>Affiche le registre de l'instruction. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 </div><!-- contents -->
-</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -252,16 +239,13 @@ Variables</h2></td></tr>
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="instruction_8c.html">instruction.c</a>      </li>
 
-    <li class="footer">Generated on Wed Jun 11 2014 10:55:49 for Pinocchio by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
-   </ul>
- </div>
 
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
 
 </body>
 </html>

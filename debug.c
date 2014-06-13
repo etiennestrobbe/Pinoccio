@@ -10,9 +10,28 @@
  * \author Etienne
  * \date 10 Juin 2014
  */
-
-void print_help();
+ 
 bool debug = true;
+
+/**
+ * \fn void print_help()
+ * \brief Fonction qui affiche les commandes d'options
+ * \author Etienne
+ */
+static void print_help(){
+	printf("\
+	Available commands:\n\
+	h	help\n\
+	c	continue (exit interactive debug mode)\n\
+	s	step by step (next instruction)\n\
+	RET	step by step (next instruction)\n\
+	r	print registers\n\
+	d	print data memory\n\
+	t	print text (program) memory\n\
+	p	print text (program) memory\n\
+	m	print registers and data memory\n");
+}
+
 
 //! Dialogue de mise au point interactive pour l'instruction courante.
 /*!
@@ -51,21 +70,4 @@ bool debug_ask(Machine *pmach){
 }
 
 
-/**
- * \fn void print_help()
- * \brief Fonction qui affiche les commandes d'options
- * \author Etienne
- */
-void print_help(){
-	printf("\
-	Available commands:\n\
-	h	help\n\
-	c	continue (exit interactive debug mode)\n\
-	s	step by step (next instruction)\n\
-	RET	step by step (next instruction)\n\
-	r	print registers\n\
-	d	print data memory\n\
-	t	print text (program) memory\n\
-	p	print text (program) memory\n\
-	m	print registers and data memory\n");
-}
+

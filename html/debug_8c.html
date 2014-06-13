@@ -3,18 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Pinocchio: debug.c File Reference</title>
+<title>PFS-gr19: debug.c File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
+
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -32,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Pinocchio
+   <div id="projectname">PFS-gr19
    
    </div>
-   <div id="projectbrief">projet de c</div>
+   
   </td>
   
   
@@ -79,19 +74,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('debug_8c.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#define-members">Defines</a> &#124;
@@ -101,6 +83,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">debug.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>implementation du mode debug  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="debug_8h_source.html">debug.h</a>&quot;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;string.h&gt;</code><br/>
@@ -108,34 +93,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a392fb874e547e582e9c66a08a1f23326">MAX</a>&#160;&#160;&#160;50</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a392fb874e547e582e9c66a08a1f23326"></a><!-- doxytag: member="debug.c::MAX" ref="a392fb874e547e582e9c66a08a1f23326" args="" -->
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX</b>&#160;&#160;&#160;50</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a853216ac51aa181669ff4d3de74058a7">print_help</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a70b4f468abdd60eb3fd8e7a17c44ced7">print_end</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a43b25a32af317ebd55e5806a0ee9cff7">simul_instruction</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui affiche les commandes d'options.  <a href="#a853216ac51aa181669ff4d3de74058a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a3a88fdc680b7a1ae8c4c7c8ddee730ab">debug_ask</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dialogue de mise au point interactive pour l'instruction courante.  <a href="#a3a88fdc680b7a1ae8c4c7c8ddee730ab"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#aaa2c20cd1aff86d65affbafcfa8efdfb">print_end</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debug_8c.html#a398527b3e9e358c345c5047b16871957">debug</a> = true</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a398527b3e9e358c345c5047b16871957"></a><!-- doxytag: member="debug.c::debug" ref="a398527b3e9e358c345c5047b16871957" args="" -->
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>debug</b> = true</td></tr>
 </table>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a392fb874e547e582e9c66a08a1f23326"></a><!-- doxytag: member="debug.c::MAX" ref="a392fb874e547e582e9c66a08a1f23326" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="debug_8c.html#a392fb874e547e582e9c66a08a1f23326">MAX</a>&#160;&#160;&#160;50</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/><h2>Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>implementation du mode debug </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>10 Juin 2014 </dd></dl>
+</div><hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a3a88fdc680b7a1ae8c4c7c8ddee730ab"></a><!-- doxytag: member="debug.c::debug_ask" ref="a3a88fdc680b7a1ae8c4c7c8ddee730ab" args="(Machine *pmach)" -->
 <div class="memitem">
 <div class="memproto">
@@ -163,39 +138,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a70b4f468abdd60eb3fd8e7a17c44ced7"></a><!-- doxytag: member="debug.c::print_end" ref="a70b4f468abdd60eb3fd8e7a17c44ced7" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="debug_8c.html#aaa2c20cd1aff86d65affbafcfa8efdfb">print_end</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="aaa2c20cd1aff86d65affbafcfa8efdfb"></a><!-- doxytag: member="debug.c::print_end" ref="aaa2c20cd1aff86d65affbafcfa8efdfb" args="(Machine *pmach)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="debug_8c.html#aaa2c20cd1aff86d65affbafcfa8efdfb">print_end</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
-          <td class="paramname"><em>pmach</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a853216ac51aa181669ff4d3de74058a7"></a><!-- doxytag: member="debug.c::print_help" ref="a853216ac51aa181669ff4d3de74058a7" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -210,41 +152,12 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-</div>
-</div>
-<a class="anchor" id="a43b25a32af317ebd55e5806a0ee9cff7"></a><!-- doxytag: member="debug.c::simul_instruction" ref="a43b25a32af317ebd55e5806a0ee9cff7" args="(Machine *pmach)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="debug_8c.html#a43b25a32af317ebd55e5806a0ee9cff7">simul_instruction</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
-          <td class="paramname"><em>pmach</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="a398527b3e9e358c345c5047b16871957"></a><!-- doxytag: member="debug.c::debug" ref="a398527b3e9e358c345c5047b16871957" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="debug_8c.html#a398527b3e9e358c345c5047b16871957">debug</a> = true</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
+<p>Fonction qui affiche les commandes d'options. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
-</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -259,16 +172,13 @@ Variables</h2></td></tr>
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="debug_8c.html">debug.c</a>      </li>
 
-    <li class="footer">Generated on Wed Jun 11 2014 10:55:49 for Pinocchio by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
-   </ul>
- </div>
 
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
 
 </body>
 </html>

@@ -3,18 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Pinocchio: exec.c File Reference</title>
+<title>PFS-gr19: exec.c File Reference</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-</script>
+
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
   $(document).ready(function() { searchBox.OnSelectItem(0); });
@@ -32,10 +27,10 @@
   
   
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Pinocchio
+   <div id="projectname">PFS-gr19
    
    </div>
-   <div id="projectbrief">projet de c</div>
+   
   </td>
   
   
@@ -79,19 +74,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     </ul>
   </div>
 </div>
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-  initNavTree('exec_8c.html','');
-</script>
-<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -99,6 +81,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">exec.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Exécution d'une instruction.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="exec_8h_source.html">exec.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="error_8h_source.html">error.h</a>&quot;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
@@ -106,14 +91,164 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a3692dcc0467443a945764289824f5245">is_in_immediate_mode</a> (<a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui test si l'instruction est donnée en mode immédiat.  <a href="#a3692dcc0467443a945764289824f5245"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ac1bf538d3452c1591786328fa956cd33">is_in_indexed_mode</a> (<a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#aed8cd0d674225e8d6a2f1c963b5ff81f">exec_add</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui test si l'instruction est donnée en mode d'adressage indexé  <a href="#ac1bf538d3452c1591786328fa956cd33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a80b654c1ab28d122392dbc4b71f48d36">check_condition</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui test si la condition de l'instruction est validée.  <a href="#a80b654c1ab28d122392dbc4b71f48d36"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a7bb129b6417ab5fbec1f53b83b46a5ec">check_adresse_data</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, int adresse)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test si l'adresse en paramètre est une adresse mémoire bien définie.  <a href="#a7bb129b6417ab5fbec1f53b83b46a5ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a63d59ba962a550926854e9baa014e299">check_adresse_text</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, int adresse)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Test si l'adresse en paramètre est une adresse d'instruction bien définie.  <a href="#a63d59ba962a550926854e9baa014e299"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a5a4b2dd4fe450219b6e5dbd32497d42c">get_addr</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui renvoi la bonne adresse en fonction du mode d'adressage (indexé ou non)  <a href="#a5a4b2dd4fe450219b6e5dbd32497d42c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b88a70b362e4d6914667cfe79a20d52"></a><!-- doxytag: member="exec.c::update_condition" ref="a2b88a70b362e4d6914667cfe79a20d52" args="(Machine *pmach, int condition)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update_condition</b> (<a class="el" href="struct_machine.html">Machine</a> *pmach, int condition)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#af58b95285ac3ea05ec6ee9e6e60e038b">exec_illop</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction ILLOP.  <a href="#af58b95285ac3ea05ec6ee9e6e60e038b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#aeeca9aba3d3f265b00de6f5ce9a08050">exec_load</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction LOAD.  <a href="#aeeca9aba3d3f265b00de6f5ce9a08050"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a673569eec34bef6b3ccf4e89941e4efb">exec_store</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction STORE.  <a href="#a673569eec34bef6b3ccf4e89941e4efb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ab29f4e27336444f0f4f3d303a7513025">exec_add</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction ADD.  <a href="#ab29f4e27336444f0f4f3d303a7513025"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ade5046727c94db0165baa4092e5ea9e9">exec_branch</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction BRANCH.  <a href="#ade5046727c94db0165baa4092e5ea9e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ae4effa11a25cf3381a9dbde19bb6316d">exec_sub</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction SUB.  <a href="#ae4effa11a25cf3381a9dbde19bb6316d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a79007627f079cb6f1e6c7a8ff3973c4c">exec_call</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction CALL.  <a href="#a79007627f079cb6f1e6c7a8ff3973c4c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#ab87c535c97884a58bdacb460744bce46">exec_ret</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction RET.  <a href="#ab87c535c97884a58bdacb460744bce46"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#aab8d5cbcfa79b1f0146467f0fdb44a32">exec_push</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction PUSH.  <a href="#aab8d5cbcfa79b1f0146467f0fdb44a32"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a68379bbda0e08f46fbe555fd29e4edc4">exec_pop</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction POP.  <a href="#a68379bbda0e08f46fbe555fd29e4edc4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a2eaf858e135a221546caf3debd554e4c">exec_halt</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui execute l'instruction HALT.  <a href="#a2eaf858e135a221546caf3debd554e4c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#a41471ced34d27777447c2609173af7de">decode_execute</a> (<a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Décodage et exécution d'une instruction.  <a href="#a41471ced34d27777447c2609173af7de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="exec_8c.html#aae353f8fd7ccdbebd6c37fc0f75d12d3">trace</a> (const char *msg, <a class="el" href="struct_machine.html">Machine</a> *pmach, <a class="el" href="union_instruction.html">Instruction</a> instr, unsigned addr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Trace de l'exécution.  <a href="#aae353f8fd7ccdbebd6c37fc0f75d12d3"></a><br/></td></tr>
 </table>
-<hr/><h2>Function Documentation</h2>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><p>Exécution d'une instruction. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne.S Rémy.D </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>0.1 </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>11 Juin 2014 </dd></dl>
+</div><hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a7bb129b6417ab5fbec1f53b83b46a5ec"></a><!-- doxytag: member="exec.c::check_adresse_data" ref="a7bb129b6417ab5fbec1f53b83b46a5ec" args="(Machine *pmach, int adresse)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="exec_8c.html#a7bb129b6417ab5fbec1f53b83b46a5ec">check_adresse_data</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>adresse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test si l'adresse en paramètre est une adresse mémoire bien définie. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instruction </td></tr>
+    <tr><td class="paramname">adresse</td><td>l'adresse à tester </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a63d59ba962a550926854e9baa014e299"></a><!-- doxytag: member="exec.c::check_adresse_text" ref="a63d59ba962a550926854e9baa014e299" args="(Machine *pmach, int adresse)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="exec_8c.html#a63d59ba962a550926854e9baa014e299">check_adresse_text</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>adresse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Test si l'adresse en paramètre est une adresse d'instruction bien définie. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instruction </td></tr>
+    <tr><td class="paramname">adresse</td><td>l'adresse à tester </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a80b654c1ab28d122392dbc4b71f48d36"></a><!-- doxytag: member="exec.c::check_condition" ref="a80b654c1ab28d122392dbc4b71f48d36" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="exec_8c.html#a80b654c1ab28d122392dbc4b71f48d36">check_condition</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui test si la condition de l'instruction est validée. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute l'instruction </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction qui contient la condition </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>true si la condition est validée et false sinon </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a41471ced34d27777447c2609173af7de"></a><!-- doxytag: member="exec.c::decode_execute" ref="a41471ced34d27777447c2609173af7de" args="(Machine *pmach, Instruction instr)" -->
 <div class="memitem">
 <div class="memproto">
@@ -140,6 +275,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Décodage et exécution d'une instruction. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pmach</td><td>la machine/programme en cours d'exécution </td></tr>
@@ -151,12 +287,12 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aed8cd0d674225e8d6a2f1c963b5ff81f"></a><!-- doxytag: member="exec.c::exec_add" ref="aed8cd0d674225e8d6a2f1c963b5ff81f" args="(Machine *pmach, Instruction instr)" -->
+<a class="anchor" id="ab29f4e27336444f0f4f3d303a7513025"></a><!-- doxytag: member="exec.c::exec_add" ref="ab29f4e27336444f0f4f3d303a7513025" args="(Machine *pmach, Instruction instr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="exec_8c.html#aed8cd0d674225e8d6a2f1c963b5ff81f">exec_add</a> </td>
+          <td class="memname"><a class="el" href="exec_8c.html#ab29f4e27336444f0f4f3d303a7513025">exec_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
           <td class="paramname"><em>pmach</em>, </td>
@@ -176,6 +312,424 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Fonction qui execute l'instruction ADD. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ade5046727c94db0165baa4092e5ea9e9"></a><!-- doxytag: member="exec.c::exec_branch" ref="ade5046727c94db0165baa4092e5ea9e9" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#ade5046727c94db0165baa4092e5ea9e9">exec_branch</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction BRANCH. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a79007627f079cb6f1e6c7a8ff3973c4c"></a><!-- doxytag: member="exec.c::exec_call" ref="a79007627f079cb6f1e6c7a8ff3973c4c" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#a79007627f079cb6f1e6c7a8ff3973c4c">exec_call</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction CALL. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2eaf858e135a221546caf3debd554e4c"></a><!-- doxytag: member="exec.c::exec_halt" ref="a2eaf858e135a221546caf3debd554e4c" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#a2eaf858e135a221546caf3debd554e4c">exec_halt</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction HALT. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy Dupanloup </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="af58b95285ac3ea05ec6ee9e6e60e038b"></a><!-- doxytag: member="exec.c::exec_illop" ref="af58b95285ac3ea05ec6ee9e6e60e038b" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#af58b95285ac3ea05ec6ee9e6e60e038b">exec_illop</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction ILLOP. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy Dupanloup </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aeeca9aba3d3f265b00de6f5ce9a08050"></a><!-- doxytag: member="exec.c::exec_load" ref="aeeca9aba3d3f265b00de6f5ce9a08050" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#aeeca9aba3d3f265b00de6f5ce9a08050">exec_load</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction LOAD. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy Dupanloup </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a68379bbda0e08f46fbe555fd29e4edc4"></a><!-- doxytag: member="exec.c::exec_pop" ref="a68379bbda0e08f46fbe555fd29e4edc4" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#a68379bbda0e08f46fbe555fd29e4edc4">exec_pop</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction POP. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aab8d5cbcfa79b1f0146467f0fdb44a32"></a><!-- doxytag: member="exec.c::exec_push" ref="aab8d5cbcfa79b1f0146467f0fdb44a32" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#aab8d5cbcfa79b1f0146467f0fdb44a32">exec_push</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction PUSH. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ab87c535c97884a58bdacb460744bce46"></a><!-- doxytag: member="exec.c::exec_ret" ref="ab87c535c97884a58bdacb460744bce46" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#ab87c535c97884a58bdacb460744bce46">exec_ret</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction RET. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a673569eec34bef6b3ccf4e89941e4efb"></a><!-- doxytag: member="exec.c::exec_store" ref="a673569eec34bef6b3ccf4e89941e4efb" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#a673569eec34bef6b3ccf4e89941e4efb">exec_store</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction STORE. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy Dupanloup </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae4effa11a25cf3381a9dbde19bb6316d"></a><!-- doxytag: member="exec.c::exec_sub" ref="ae4effa11a25cf3381a9dbde19bb6316d" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#ae4effa11a25cf3381a9dbde19bb6316d">exec_sub</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui execute l'instruction SUB. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Rémy Dupanloup </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction à executer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a4b2dd4fe450219b6e5dbd32497d42c"></a><!-- doxytag: member="exec.c::get_addr" ref="a5a4b2dd4fe450219b6e5dbd32497d42c" args="(Machine *pmach, Instruction instr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="exec_8c.html#a5a4b2dd4fe450219b6e5dbd32497d42c">get_addr</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_machine.html">Machine</a> *&#160;</td>
+          <td class="paramname"><em>pmach</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
+          <td class="paramname"><em>instr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Fonction qui renvoi la bonne adresse en fonction du mode d'adressage (indexé ou non) </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pmach</td><td>la machine qui execute les instructions </td></tr>
+    <tr><td class="paramname">instr</td><td>l'instruction qui contient l'adresse et le mode d'adressage </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>l'adresse voulue </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="a3692dcc0467443a945764289824f5245"></a><!-- doxytag: member="exec.c::is_in_immediate_mode" ref="a3692dcc0467443a945764289824f5245" args="(Instruction instr)" -->
@@ -193,6 +747,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
+<p>Fonction qui test si l'instruction est donnée en mode immédiat. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instr</td><td>l'instruction à tester </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>renvoi true si vrai et false dans le cas contraire </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ac1bf538d3452c1591786328fa956cd33"></a><!-- doxytag: member="exec.c::is_in_indexed_mode" ref="ac1bf538d3452c1591786328fa956cd33" args="(Instruction instr)" -->
@@ -209,6 +773,16 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Fonction qui test si l'instruction est donnée en mode d'adressage indexé </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">instr</td><td>l'instruction à tester </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>renvoi true si vrai et false dans le cas contraire </dd></dl>
 
 </div>
 </div>
@@ -250,7 +824,8 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Trace de l'exécution. </p>
-<p>On écrit l'adresse et l'instruction sous forme lisible.</p>
+<p>On écrit l'adresse et l'instruction sous forme lisible. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Etienne Strobbe </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">msg</td><td>le message de trace </td></tr>
@@ -264,7 +839,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-</div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -279,16 +853,13 @@ Functions</h2></td></tr>
 </iframe>
 </div>
 
-  <div id="nav-path" class="navpath">
-    <ul>
-      <li class="navelem"><a class="el" href="exec_8c.html">exec.c</a>      </li>
 
-    <li class="footer">Generated on Wed Jun 11 2014 10:55:49 for Pinocchio by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
-   </ul>
- </div>
 
+<hr class="footer"/><address class="footer"><small>
+Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
 
 </body>
 </html>

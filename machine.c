@@ -287,7 +287,7 @@ unsigned dataend = %d",pmach->_datasize,pmach->_dataend);
  * Excecute l'instruction suivante (renseignée dans pc) de la 
  * machine passée en parametre.
  */
-bool do_one_step(Machine *pmach){
+static bool do_one_step(Machine *pmach){
 	Instruction instr = (pmach->_text)[(pmach->_pc)++];
 	trace("Executing",pmach,instr,(pmach->_pc)-1);
 	return decode_execute(pmach,instr);

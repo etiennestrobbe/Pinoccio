@@ -18,7 +18,7 @@
  * \param instr l'instruction à tester
  * \return renvoi true si vrai et false dans le cas contraire
  */
-int is_in_immediate_mode(Instruction instr){
+static int is_in_immediate_mode(Instruction instr){
 	return (instr.instr_generic._immediate);
 }
 /**
@@ -28,7 +28,7 @@ int is_in_immediate_mode(Instruction instr){
  * \param instr l'instruction à tester
  * \return renvoi true si vrai et false dans le cas contraire
  */
-int is_in_indexed_mode(Instruction instr){
+static int is_in_indexed_mode(Instruction instr){
 	return (instr.instr_generic._indexed);
 }
 
@@ -40,7 +40,7 @@ int is_in_indexed_mode(Instruction instr){
  * \param instr l'instruction qui contient la condition
  * \return true si la condition est validée et false sinon
  */
-bool check_condition(Machine *pmach,Instruction instr){
+static bool check_condition(Machine *pmach,Instruction instr){
 	if(instr.instr_generic._regcond > 6 || instr.instr_generic._regcond < 0) error(ERR_CONDITION,(pmach->_pc)-1);
 	switch(instr.instr_generic._regcond){
 		case NC:return true;
@@ -61,7 +61,7 @@ bool check_condition(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instruction
  * \param adresse l'adresse à tester
  */
-void check_adresse_data(Machine *pmach, int adresse){
+static void check_adresse_data(Machine *pmach, int adresse){
 	if (adresse < 0 || adresse > (pmach -> _datasize))error(ERR_SEGDATA,(pmach ->_pc-1));
 }
 /**
@@ -71,7 +71,7 @@ void check_adresse_data(Machine *pmach, int adresse){
  * \param pmach la machine qui execute les instruction
  * \param adresse l'adresse à tester
  */
-void check_adresse_text(Machine *pmach, int adresse){
+static void check_adresse_text(Machine *pmach, int adresse){
 	if (adresse < 0 || adresse > (pmach -> _textsize))error(ERR_SEGTEXT,(pmach ->_pc-1));
 }
 
@@ -83,7 +83,7 @@ void check_adresse_text(Machine *pmach, int adresse){
  * \param instr l'instruction qui contient l'adresse et le mode d'adressage
  * \return l'adresse voulue
  */
-int get_addr(Machine *pmach,Instruction instr){
+static int get_addr(Machine *pmach,Instruction instr){
 	return (is_in_indexed_mode(instr))?(pmach->_registers[instr.instr_indexed._rindex])+instr.instr_indexed._offset:instr.instr_absolute._address;
 }
 /**
@@ -93,7 +93,7 @@ int get_addr(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param condition la nouvelle condition
  */
-void update_condition(Machine *pmach, int condition) {
+static void update_condition(Machine *pmach, int condition) {
 	(pmach->_cc) = (condition == 0)?CC_Z:(condition>0)?CC_P:CC_N;
 }
 
@@ -104,7 +104,7 @@ void update_condition(Machine *pmach, int condition) {
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_illop(Machine *pmach, Instruction instr){
+static void exec_illop(Machine *pmach, Instruction instr){
 	error(ERR_ILLEGAL, (pmach->_pc -1)); 
 }
 
@@ -115,7 +115,7 @@ void exec_illop(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_load(Machine *pmach, Instruction instr){
+static void exec_load(Machine *pmach, Instruction instr){
 	// Mode immediat
 	int reg = instr.instr_generic._regcond;
 	if (is_in_immediate_mode(instr)){
@@ -138,7 +138,7 @@ void exec_load(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_store(Machine *pmach, Instruction instr){
+static void exec_store(Machine *pmach, Instruction instr){
 	// Mode Immediat
 	if (is_in_immediate_mode(instr)){
 		error(ERR_IMMEDIATE, ((pmach -> _pc) -1));
@@ -160,7 +160,7 @@ void exec_store(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_add(Machine *pmach,Instruction instr){
+static void exec_add(Machine *pmach,Instruction instr){
 	int reg = instr.instr_generic._regcond;
 	// mode immediat -> traiter le cas signe
 	if(is_in_immediate_mode(instr)){
@@ -183,7 +183,7 @@ void exec_add(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_branch(Machine *pmach,Instruction instr){
+static void exec_branch(Machine *pmach,Instruction instr){
 	if(is_in_immediate_mode(instr)) error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	check_condition(pmach,instr);
 	if(check_condition(pmach,instr)){
@@ -200,7 +200,7 @@ void exec_branch(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_sub(Machine *pmach, Instruction instr){
+static void exec_sub(Machine *pmach, Instruction instr){
 	int reg = instr.instr_generic._regcond;
 	// mode immediat
 	if (is_in_immediate_mode(instr)){
@@ -223,7 +223,7 @@ void exec_sub(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_call(Machine *pmach,Instruction instr){
+static void exec_call(Machine *pmach,Instruction instr){
 	if(is_in_immediate_mode(instr))error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	check_condition(pmach,instr);
 	if(check_condition(pmach,instr)){
@@ -241,7 +241,7 @@ void exec_call(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_ret(Machine *pmach,Instruction instr){
+static void exec_ret(Machine *pmach,Instruction instr){
 	check_adresse_text(pmach,++(pmach->_sp));
 	pmach->_pc = pmach->_data[(pmach->_sp)];
 }
@@ -253,7 +253,7 @@ void exec_ret(Machine *pmach,Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_push(Machine *pmach, Instruction instr){
+static void exec_push(Machine *pmach, Instruction instr){
 	int val;
 	if(is_in_immediate_mode(instr))val = instr.instr_immediate._value;
 	else{
@@ -271,7 +271,7 @@ void exec_push(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_pop(Machine *pmach, Instruction instr){
+static void exec_pop(Machine *pmach, Instruction instr){
 	if(is_in_immediate_mode(instr))error(ERR_IMMEDIATE,(pmach->_pc)-1);
 	int adresse = get_addr(pmach,instr);
 	check_adresse_data(pmach,adresse);
@@ -286,7 +286,7 @@ void exec_pop(Machine *pmach, Instruction instr){
  * \param pmach la machine qui execute les instructions
  * \param instr l'instruction à executer
  */
-void exec_halt(Machine *pmach, Instruction instr){
+static void exec_halt(Machine *pmach, Instruction instr){
 	warning(WARN_HALT,(pmach->_pc)-1);
 }
 	

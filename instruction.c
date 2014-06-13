@@ -20,7 +20,7 @@ const char* condition_names[] = {"NC", "EQ", "NE", "GT", "GE", "LT", "LE"};
  * \brief Affiche le registre de l'instruction
  * \param i, l'instruction a afficher.
  */
-void print_registre(Instruction i){
+static void print_registre(Instruction i){
 	(i.instr_generic._regcond >= 10) ? printf("R%d, ", i.instr_generic._regcond) : printf("R0%d, ", i.instr_generic._regcond);
 	// Ca dépote le ternaire !
 }
@@ -30,7 +30,7 @@ void print_registre(Instruction i){
  * \brief Affiche la condition de l'instruction
  * \param i, l'instruction a afficher.
  */
-void print_condition(Instruction i){
+static void print_condition(Instruction i){
 	printf("%s, ",condition_names[i.instr_generic._regcond]);
 }
 
@@ -39,7 +39,7 @@ void print_condition(Instruction i){
  * \brief Affiche l'opérande de l'instruction: la valeur immédiate ou l'adresse absolue ou l'adresse indexée
  * \param i, l'instruction a afficher.
  */
-void print_operande(Instruction i){
+static void print_operande(Instruction i){
 	if (i.instr_generic._immediate == 1){
 		printf("#%d", i.instr_immediate._value);
 	}
