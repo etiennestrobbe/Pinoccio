@@ -47,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -90,12 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#af635442db57b983f3317cbf77da036a4">print_registre</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche le registre de l'instruction.  <a href="#af635442db57b983f3317cbf77da036a4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#af60bd482be33f6422e76e4da4b5b8ee1">print_condition</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la condition de l'instruction.  <a href="#af60bd482be33f6422e76e4da4b5b8ee1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#ab96f3a4f54ea0f830aebeeeaf4d5aa38">print_operande</a> (<a class="el" href="union_instruction.html">Instruction</a> i)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'opérande de l'instruction: la valeur immédiate ou l'adresse absolue ou l'adresse indexée.  <a href="#ab96f3a4f54ea0f830aebeeeaf4d5aa38"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="instruction_8c.html#a437080d5e8c504588a47d0dba468492f">print_instruction</a> (<a class="el" href="union_instruction.html">Instruction</a> instr, unsigned addr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une instruction en entière.  <a href="#a437080d5e8c504588a47d0dba468492f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
@@ -113,31 +107,6 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <dl class="date"><dt><b>Date:</b></dt><dd>10 juin 2014</dd></dl>
 <p>Programme permettant l'affichage d'une instruction sous la forme : COP REG, OP. </p>
 </div><hr/><h2>Function Documentation</h2>
-<a class="anchor" id="af60bd482be33f6422e76e4da4b5b8ee1"></a><!-- doxytag: member="instruction.c::print_condition" ref="af60bd482be33f6422e76e4da4b5b8ee1" args="(Instruction i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="instruction_8c.html#af60bd482be33f6422e76e4da4b5b8ee1">print_condition</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Affiche la condition de l'instruction. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a437080d5e8c504588a47d0dba468492f"></a><!-- doxytag: member="instruction.c::print_instruction" ref="a437080d5e8c504588a47d0dba468492f" args="(Instruction instr, unsigned addr)" -->
 <div class="memitem">
 <div class="memproto">
@@ -174,63 +143,13 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a class="anchor" id="ab96f3a4f54ea0f830aebeeeaf4d5aa38"></a><!-- doxytag: member="instruction.c::print_operande" ref="ab96f3a4f54ea0f830aebeeeaf4d5aa38" args="(Instruction i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="instruction_8c.html#ab96f3a4f54ea0f830aebeeeaf4d5aa38">print_operande</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Affiche l'opérande de l'instruction: la valeur immédiate ou l'adresse absolue ou l'adresse indexée. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="af635442db57b983f3317cbf77da036a4"></a><!-- doxytag: member="instruction.c::print_registre" ref="af635442db57b983f3317cbf77da036a4" args="(Instruction i)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="instruction_8c.html#af635442db57b983f3317cbf77da036a4">print_registre</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="union_instruction.html">Instruction</a>&#160;</td>
-          <td class="paramname"><em>i</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Affiche le registre de l'instruction. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i,l'instruction</td><td>a afficher. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -242,7 +161,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 14:29:51 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

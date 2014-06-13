@@ -47,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li class="current"><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -69,15 +69,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
-      <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
-      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Instruction Union Reference</div>  </div>
 </div><!--header-->
@@ -87,68 +87,70 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <a href="union_instruction.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="instruction_8h_source.html">instruction.h</a>&gt;</code></p>
+
+<p><a href="union_instruction-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae01e4320e4368174859b68c497135012"></a><!-- doxytag: member="Instruction::_raw" ref="ae01e4320e4368174859b68c497135012" args="" -->
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#ae01e4320e4368174859b68c497135012">_raw</a></td></tr>
+Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08ef7213c93af0699643ef2473e8ab6e"></a><!-- doxytag: member="Instruction::_raw" ref="a08ef7213c93af0699643ef2473e8ab6e" args="" -->
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#a08ef7213c93af0699643ef2473e8ab6e">_raw</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format brut : un mot de 32 bits. <br/></td></tr>
-<tr><td class="memItemLeft" ><a class="anchor" id="a655fbddb807dcc35363d6149dbb26237"></a><!-- doxytag: member="Instruction::instr_generic" ref="a655fbddb807dcc35363d6149dbb26237" args="" -->
+<tr><td class="memItemLeft" ><a class="anchor" id="a5903d65905a4fd4f8c917ed17d9d9211"></a><!-- doxytag: member="Instruction::instr_generic" ref="a5903d65905a4fd4f8c917ed17d9d9211" args="" -->
 struct {</td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a2eef4c29da07a7afefa510530aeabe8b">_cop</a>: 6</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d">_immediate</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14">_indexed</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0">_regcond</a>: 4</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition. <br/></td></tr>
 <tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<b>_pad</b>: 20</td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#a655fbddb807dcc35363d6149dbb26237">instr_generic</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#a5903d65905a4fd4f8c917ed17d9d9211">instr_generic</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format générique : les premiers champs sont communs. <br/></td></tr>
-<tr><td class="memItemLeft" ><a class="anchor" id="aad60aa5074ecb500e3a90bae25b7e27a"></a><!-- doxytag: member="Instruction::instr_absolute" ref="aad60aa5074ecb500e3a90bae25b7e27a" args="" -->
+<tr><td class="memItemLeft" ><a class="anchor" id="a076d47129f335050439808b57f8c6e6e"></a><!-- doxytag: member="Instruction::instr_absolute" ref="a076d47129f335050439808b57f8c6e6e" args="" -->
 struct {</td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a2eef4c29da07a7afefa510530aeabe8b">_cop</a>: 6</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d">_immediate</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14">_indexed</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0">_regcond</a>: 4</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a7d8f71662d751668bc08cbac1c529124">_address</a>: 20</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a46298af10c7133abf77f4d86f44b549b">_address</a>: 20</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adresse absolue. <br/></td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#aad60aa5074ecb500e3a90bae25b7e27a">instr_absolute</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#a076d47129f335050439808b57f8c6e6e">instr_absolute</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'une instruction à adressage absolue. <br/></td></tr>
-<tr><td class="memItemLeft" ><a class="anchor" id="ad71dbb5583d6c21a4e562be0b378ff8a"></a><!-- doxytag: member="Instruction::instr_immediate" ref="ad71dbb5583d6c21a4e562be0b378ff8a" args="" -->
+<tr><td class="memItemLeft" ><a class="anchor" id="abe0842841a99720d36796e4ab9baafe0"></a><!-- doxytag: member="Instruction::instr_immediate" ref="abe0842841a99720d36796e4ab9baafe0" args="" -->
 struct {</td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a2eef4c29da07a7afefa510530aeabe8b">_cop</a>: 6</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d">_immediate</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14">_indexed</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0">_regcond</a>: 4</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="union_instruction.html#ab38556b2069bd4af524024e6045fc711">_value</a>: 20</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="union_instruction.html#aa0cc705f1610955cf6ac0b15efbcca8a">_value</a>: 20</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur immédiate. <br/></td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#ad71dbb5583d6c21a4e562be0b378ff8a">instr_immediate</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#abe0842841a99720d36796e4ab9baafe0">instr_immediate</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'une instruction à valeur immédiate. <br/></td></tr>
-<tr><td class="memItemLeft" ><a class="anchor" id="ab483163ca6ac7161f93c94601563ccad"></a><!-- doxytag: member="Instruction::instr_indexed" ref="ab483163ca6ac7161f93c94601563ccad" args="" -->
+<tr><td class="memItemLeft" ><a class="anchor" id="a095e13c73c8bba3d15603a390804d09b"></a><!-- doxytag: member="Instruction::instr_indexed" ref="a095e13c73c8bba3d15603a390804d09b" args="" -->
 struct {</td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a2eef4c29da07a7afefa510530aeabe8b">_cop</a>: 6</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="instruction_8h.html#a5ead9d7413d75b14e895c945daa82de6">Code_Op</a>&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5682ffc6f762bda7a50e41ea9042cb39">_cop</a>: 6</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Code opération. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#ae8f0aed9ccc5cc06e0689f32c409787d">_immediate</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a350ef9c256c24b90297798b15164db13">_immediate</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage immédiat ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a49ff74dcae74d84b5fce96090bcbcd14">_indexed</a>: 1</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5d3ae850423e6d91f7fe54111c3f766c">_indexed</a>: 1</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adressage indirect ? <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#aacc0d299ebbd857ec008b3c9e2ae2cd0">_regcond</a>: 4</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a8f5f38c91d2c3443dcd962101bfe19e2">_regcond</a>: 4</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro de registre ou condition. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a5b83cbbfd9b2a340e978069a3607a680">_rindex</a>: 4</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;unsigned&#160;&#160;&#160;<a class="el" href="union_instruction.html#a057a22a377dd83f2e63a8b6e34df7164">_rindex</a>: 4</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Numéro du registre d'index. <br/></td></tr>
-<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="union_instruction.html#af20114f4f10437752340dc9d6a078547">_offset</a>: 16</td></tr>
+<tr><td class="memItemLeft" >&#160;&#160;&#160;signed int&#160;&#160;&#160;<a class="el" href="union_instruction.html#abb5834e4f338c8e0411467130a1a4b50">_offset</a>: 16</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplacement. <br/></td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#ab483163ca6ac7161f93c94601563ccad">instr_indexed</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="union_instruction.html#a095e13c73c8bba3d15603a390804d09b">instr_indexed</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Format d'une instruction à adressage indéxé <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -166,7 +168,7 @@ Ceci a un inconvénient (léger) : les champs de bits ne s'appliquent qu'à des 
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -178,7 +180,7 @@ Ceci a un inconvénient (léger) : les champs de bits ne s'appliquent qu'à des 
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 14:29:51 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

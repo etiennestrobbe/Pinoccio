@@ -47,7 +47,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -70,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
-      <li><a href="globals.html"><span>Globals</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -105,18 +105,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00070"></a><a class="code" href="struct_machine.html">00070</a> <span class="keyword">typedef</span> <span class="keyword">struct</span>
 <a name="l00071"></a>00071 {
 <a name="l00072"></a>00072     <span class="comment">// Segments de mémoire</span>
-<a name="l00073"></a><a class="code" href="struct_machine.html#ac3249102d1999b98e27e51867198e39a">00073</a>     <a class="code" href="union_instruction.html" title="Structure d&#39;une instruction.">Instruction</a> *<a class="code" href="struct_machine.html#ac3249102d1999b98e27e51867198e39a" title="Mémoire pour les instructions.">_text</a>;         
-<a name="l00074"></a><a class="code" href="struct_machine.html#ac0943af89706f023b8f3c9c75e2c9f16">00074</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#ac0943af89706f023b8f3c9c75e2c9f16" title="Taille utilisée pour les instructions.">_textsize</a>;     
+<a name="l00073"></a><a class="code" href="struct_machine.html#a052e945d3eab840b58171c53a873aec3">00073</a>     <a class="code" href="union_instruction.html" title="Structure d&#39;une instruction.">Instruction</a> *<a class="code" href="struct_machine.html#a052e945d3eab840b58171c53a873aec3" title="Mémoire pour les instructions.">_text</a>;         
+<a name="l00074"></a><a class="code" href="struct_machine.html#a6a405b4b09d4e566cf27f0bed3505b11">00074</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#a6a405b4b09d4e566cf27f0bed3505b11" title="Taille utilisée pour les instructions.">_textsize</a>;     
 <a name="l00075"></a>00075 
-<a name="l00076"></a><a class="code" href="struct_machine.html#a4d0ccf4cdbb4b1b968aaa93dae278c47">00076</a>     <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> *<a class="code" href="struct_machine.html#a4d0ccf4cdbb4b1b968aaa93dae278c47" title="Mémoire de données.">_data</a>;                
-<a name="l00077"></a><a class="code" href="struct_machine.html#a45bdca8bd79802ec21021ab3a6ef8e2c">00077</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#a45bdca8bd79802ec21021ab3a6ef8e2c" title="Taille utilisée pour les données.">_datasize</a>;     
+<a name="l00076"></a><a class="code" href="struct_machine.html#ac2949056c217e69a8efe6a114d2ac2b0">00076</a>     <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> *<a class="code" href="struct_machine.html#ac2949056c217e69a8efe6a114d2ac2b0" title="Mémoire de données.">_data</a>;                
+<a name="l00077"></a><a class="code" href="struct_machine.html#a8a50815b359c1602c95edd3459ad05c8">00077</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#a8a50815b359c1602c95edd3459ad05c8" title="Taille utilisée pour les données.">_datasize</a>;     
 <a name="l00078"></a>00078 
-<a name="l00079"></a><a class="code" href="struct_machine.html#a6672a65c5a3319e5d1dc646d6c4e720f">00079</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#a6672a65c5a3319e5d1dc646d6c4e720f" title="Première adresse libre après les données statiques.">_dataend</a>;      
+<a name="l00079"></a><a class="code" href="struct_machine.html#a4cf57550abe18e1dece177fb8794d6c0">00079</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="struct_machine.html#a4cf57550abe18e1dece177fb8794d6c0" title="Première adresse libre après les données statiques.">_dataend</a>;      
 <a name="l00080"></a>00080 
 <a name="l00081"></a>00081     <span class="comment">// Registres de l&#39;unité centrale</span>
-<a name="l00082"></a><a class="code" href="struct_machine.html#aeb680839a66dd8d6eb8e0f5971462b9a">00082</a>     <span class="keywordtype">unsigned</span> <a class="code" href="struct_machine.html#aeb680839a66dd8d6eb8e0f5971462b9a" title="Compteur ordinal.">_pc</a>;               
-<a name="l00083"></a><a class="code" href="struct_machine.html#a741225dbae765ec0fa5cd14613334b66">00083</a>     <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3" title="Code condition.">Condition_Code</a> <a class="code" href="struct_machine.html#a741225dbae765ec0fa5cd14613334b66" title="Code condition : signe de la dernière opération.">_cc</a>;         
-<a name="l00084"></a><a class="code" href="struct_machine.html#a2275469edc6c6cd7ecb8d75ec745d41f">00084</a>     <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> _registers[<a class="code" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f" title="Nombre de resitres généraux.">NREGISTERS</a>];
+<a name="l00082"></a><a class="code" href="struct_machine.html#a1b3345874b1ade4324f16f3e03944675">00082</a>     <span class="keywordtype">unsigned</span> <a class="code" href="struct_machine.html#a1b3345874b1ade4324f16f3e03944675" title="Compteur ordinal.">_pc</a>;               
+<a name="l00083"></a><a class="code" href="struct_machine.html#adbb793b4331ed11783001895c76b6d4c">00083</a>     <a class="code" href="machine_8h.html#a4bc92b6f72076bb5dd651a143f58a2c3" title="Code condition.">Condition_Code</a> <a class="code" href="struct_machine.html#adbb793b4331ed11783001895c76b6d4c" title="Code condition : signe de la dernière opération.">_cc</a>;         
+<a name="l00084"></a><a class="code" href="struct_machine.html#ab4a927b1e214bd40d2406f1080eaa6c4">00084</a>     <a class="code" href="instruction_8h.html#a0b5b15ce5f3a75b5dd0de6643cd3d958" title="Type d&#39;un mot de donnée.">Word</a> _registers[<a class="code" href="machine_8h.html#a7fc2a43e54def648bc97e9f533a1e42f" title="Nombre de resitres généraux.">NREGISTERS</a>];
 <a name="l00085"></a>00085 
 <a name="l00087"></a><a class="code" href="machine_8h.html#aeed5ab4a0b09c5593a7ac3d93739b0ca">00087</a> <span class="preprocessor">#   define _sp _registers[NREGISTERS - 1] </span>
 <a name="l00088"></a>00088 <span class="preprocessor"></span>} <a class="code" href="struct_machine.html" title="Structure générale de la machine.">Machine</a>;
@@ -151,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Defines</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -163,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2014 14:09:18 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 13 2014 14:29:51 for PFS-gr19 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
